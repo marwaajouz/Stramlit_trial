@@ -1,0 +1,260 @@
+"Notes"	"Leading Cancer Sites"	"Leading Cancer Sites Code"	"Year"	"Year Code"	Count	Population	Age-Adjusted Rate	Crude Rate
+	"Brain and Other Nervous System"	"31010-31040"	"2010"	"2010"	21891	309327143	6.7	7.1
+	"Brain and Other Nervous System"	"31010-31040"	"2011"	"2011"	22019	311583481	6.7	7.1
+	"Brain and Other Nervous System"	"31010-31040"	"2012"	"2012"	22322	313877662	6.7	7.1
+	"Brain and Other Nervous System"	"31010-31040"	"2013"	"2013"	22736	316059947	6.7	7.2
+	"Brain and Other Nervous System"	"31010-31040"	"2014"	"2014"	22785	318386329	6.6	7.2
+	"Brain and Other Nervous System"	"31010-31040"	"2015"	"2015"	23042	320738994	6.6	7.2
+	"Brain and Other Nervous System"	"31010-31040"	"2016"	"2016"	23247	323071755	6.5	7.2
+	"Brain and Other Nervous System"	"31010-31040"	"2017"	"2017"	23481	325122128	6.5	7.2
+	"Brain and Other Nervous System"	"31010-31040"	"2018"	"2018"	23059	323807474	6.3	7.1
+	"Brain and Other Nervous System"	"31010-31040"	"2019"	"2019"	22538	325239182	6.1	6.9
+	"Breast"	"26000"	"2010"	"2010"	220985	309327143	65.8	71.4
+	"Breast"	"26000"	"2011"	"2011"	228980	311583481	67.1	73.5
+	"Breast"	"26000"	"2012"	"2012"	232743	313877662	67.0	74.2
+	"Breast"	"26000"	"2013"	"2013"	239471	316059947	67.7	75.8
+	"Breast"	"26000"	"2014"	"2014"	243888	318386329	67.7	76.6
+	"Breast"	"26000"	"2015"	"2015"	250168	320738994	68.3	78.0
+	"Breast"	"26000"	"2016"	"2016"	252302	323071755	67.7	78.1
+	"Breast"	"26000"	"2017"	"2017"	257138	325122128	67.9	79.1
+	"Breast"	"26000"	"2018"	"2018"	260428	323807474	68.4	80.4
+	"Breast"	"26000"	"2019"	"2019"	266483	325239182	69.0	81.9
+	"Cervix Uteri"	"27010"	"2010"	"2010"	12553	157249665	7.7	8.0
+	"Cervix Uteri"	"27010"	"2011"	"2011"	12472	158370501	7.6	7.9
+	"Cervix Uteri"	"27010"	"2012"	"2012"	12466	159480635	7.6	7.8
+	"Cervix Uteri"	"27010"	"2013"	"2013"	12323	160545893	7.4	7.7
+	"Cervix Uteri"	"27010"	"2014"	"2014"	12860	161690519	7.7	8.0
+	"Cervix Uteri"	"27010"	"2015"	"2015"	13178	162832151	7.8	8.1
+	"Cervix Uteri"	"27010"	"2016"	"2016"	13338	163986062	7.9	8.1
+	"Cervix Uteri"	"27010"	"2017"	"2017"	13139	165008683	7.7	8.0
+	"Cervix Uteri"	"27010"	"2018"	"2018"	12967	164367226	7.6	7.9
+	"Cervix Uteri"	"27010"	"2019"	"2019"	12795	165096351	7.5	7.8
+	"Colon and Rectum"	"21041-21052"	"2010"	"2010"	140202	309327143	41.8	45.3
+	"Colon and Rectum"	"21041-21052"	"2011"	"2011"	139996	311583481	41.0	44.9
+	"Colon and Rectum"	"21041-21052"	"2012"	"2012"	139092	313877662	39.8	44.3
+	"Colon and Rectum"	"21041-21052"	"2013"	"2013"	140236	316059947	39.3	44.4
+	"Colon and Rectum"	"21041-21052"	"2014"	"2014"	143115	318386329	39.3	45.0
+	"Colon and Rectum"	"21041-21052"	"2015"	"2015"	144178	320738994	38.9	45.0
+	"Colon and Rectum"	"21041-21052"	"2016"	"2016"	144987	323071755	38.5	44.9
+	"Colon and Rectum"	"21041-21052"	"2017"	"2017"	144273	325122128	37.6	44.4
+	"Colon and Rectum"	"21041-21052"	"2018"	"2018"	143462	323807474	37.1	44.3
+	"Colon and Rectum"	"21041-21052"	"2019"	"2019"	142462	325239182	36.3	43.8
+	"Corpus Uteri"	"27020"	"2010"	"2010"	45591	157249665	24.6	29.0
+	"Corpus Uteri"	"27020"	"2011"	"2011"	47005	158370501	24.9	29.7
+	"Corpus Uteri"	"27020"	"2012"	"2012"	48493	159480635	25.1	30.4
+	"Corpus Uteri"	"27020"	"2013"	"2013"	49807	160545893	25.3	31.0
+	"Corpus Uteri"	"27020"	"2014"	"2014"	51900	161690519	25.9	32.1
+	"Corpus Uteri"	"27020"	"2015"	"2015"	53553	162832151	26.3	32.9
+	"Corpus Uteri"	"27020"	"2016"	"2016"	55775	163986062	26.9	34.0
+	"Corpus Uteri"	"27020"	"2017"	"2017"	56351	165008683	26.7	34.2
+	"Corpus Uteri"	"27020"	"2018"	"2018"	56736	164367226	26.7	34.5
+	"Corpus Uteri"	"27020"	"2019"	"2019"	57306	165096351	26.7	34.7
+	"Esophagus"	"21010"	"2010"	"2010"	15940	309327143	4.7	5.2
+	"Esophagus"	"21010"	"2011"	"2011"	16385	311583481	4.7	5.3
+	"Esophagus"	"21010"	"2012"	"2012"	16435	313877662	4.6	5.2
+	"Esophagus"	"21010"	"2013"	"2013"	16881	316059947	4.6	5.3
+	"Esophagus"	"21010"	"2014"	"2014"	17248	318386329	4.6	5.4
+	"Esophagus"	"21010"	"2015"	"2015"	17645	320738994	4.6	5.5
+	"Esophagus"	"21010"	"2016"	"2016"	17886	323071755	4.5	5.5
+	"Esophagus"	"21010"	"2017"	"2017"	18090	325122128	4.5	5.6
+	"Esophagus"	"21010"	"2018"	"2018"	18669	323807474	4.6	5.8
+	"Esophagus"	"21010"	"2019"	"2019"	18950	325239182	4.5	5.8
+	"Gallbladder"	"21080"	"2010"	"2010"	3821	309327143	1.1	1.2
+	"Gallbladder"	"21080"	"2011"	"2011"	3862	311583481	1.1	1.2
+	"Gallbladder"	"21080"	"2012"	"2012"	3937	313877662	1.1	1.3
+	"Gallbladder"	"21080"	"2013"	"2013"	4042	316059947	1.1	1.3
+	"Gallbladder"	"21080"	"2014"	"2014"	4194	318386329	1.1	1.3
+	"Gallbladder"	"21080"	"2015"	"2015"	4108	320738994	1.1	1.3
+	"Gallbladder"	"21080"	"2016"	"2016"	4211	323071755	1.1	1.3
+	"Gallbladder"	"21080"	"2017"	"2017"	4158	325122128	1.1	1.3
+	"Gallbladder"	"21080"	"2018"	"2018"	4377	323807474	1.1	1.4
+	"Gallbladder"	"21080"	"2019"	"2019"	4285	325239182	1.1	1.3
+	"Kidney and Renal Pelvis"	"29020"	"2010"	"2010"	54009	309327143	16.0	17.5
+	"Kidney and Renal Pelvis"	"29020"	"2011"	"2011"	55663	311583481	16.2	17.9
+	"Kidney and Renal Pelvis"	"29020"	"2012"	"2012"	57524	313877662	16.4	18.3
+	"Kidney and Renal Pelvis"	"29020"	"2013"	"2013"	59061	316059947	16.5	18.7
+	"Kidney and Renal Pelvis"	"29020"	"2014"	"2014"	61416	318386329	16.8	19.3
+	"Kidney and Renal Pelvis"	"29020"	"2015"	"2015"	63933	320738994	17.2	19.9
+	"Kidney and Renal Pelvis"	"29020"	"2016"	"2016"	65825	323071755	17.4	20.4
+	"Kidney and Renal Pelvis"	"29020"	"2017"	"2017"	67376	325122128	17.5	20.7
+	"Kidney and Renal Pelvis"	"29020"	"2018"	"2018"	67416	323807474	17.3	20.8
+	"Kidney and Renal Pelvis"	"29020"	"2019"	"2019"	68047	325239182	17.2	20.9
+	"Larynx"	"22020"	"2010"	"2010"	12883	309327143	3.7	4.2
+	"Larynx"	"22020"	"2011"	"2011"	12667	311583481	3.6	4.1
+	"Larynx"	"22020"	"2012"	"2012"	12571	313877662	3.5	4.0
+	"Larynx"	"22020"	"2013"	"2013"	12803	316059947	3.4	4.1
+	"Larynx"	"22020"	"2014"	"2014"	12684	318386329	3.3	4.0
+	"Larynx"	"22020"	"2015"	"2015"	12625	320738994	3.2	3.9
+	"Larynx"	"22020"	"2016"	"2016"	12535	323071755	3.1	3.9
+	"Larynx"	"22020"	"2017"	"2017"	12518	325122128	3.1	3.9
+	"Larynx"	"22020"	"2018"	"2018"	12240	323807474	3.0	3.8
+	"Larynx"	"22020"	"2019"	"2019"	12077	325239182	2.9	3.7
+	"Leukemias"	"35011-35043"	"2010"	"2010"	47694	309327143	14.5	15.4
+	"Leukemias"	"35011-35043"	"2011"	"2011"	49512	311583481	14.8	15.9
+	"Leukemias"	"35011-35043"	"2012"	"2012"	50175	313877662	14.7	16.0
+	"Leukemias"	"35011-35043"	"2013"	"2013"	51635	316059947	14.9	16.3
+	"Leukemias"	"35011-35043"	"2014"	"2014"	52789	318386329	14.9	16.6
+	"Leukemias"	"35011-35043"	"2015"	"2015"	53319	320738994	14.8	16.6
+	"Leukemias"	"35011-35043"	"2016"	"2016"	53077	323071755	14.5	16.4
+	"Leukemias"	"35011-35043"	"2017"	"2017"	52975	325122128	14.2	16.3
+	"Leukemias"	"35011-35043"	"2018"	"2018"	52209	323807474	13.8	16.1
+	"Leukemias"	"35011-35043"	"2019"	"2019"	50627	325239182	13.2	15.6
+	"Liver"	"21071"	"2010"	"2010"	23015	309327143	6.6	7.4
+	"Liver"	"21071"	"2011"	"2011"	24338	311583481	6.7	7.8
+	"Liver"	"21071"	"2012"	"2012"	26027	313877662	7.0	8.3
+	"Liver"	"21071"	"2013"	"2013"	27231	316059947	7.2	8.6
+	"Liver"	"21071"	"2014"	"2014"	28761	318386329	7.4	9.0
+	"Liver"	"21071"	"2015"	"2015"	29631	320738994	7.4	9.2
+	"Liver"	"21071"	"2016"	"2016"	29806	323071755	7.3	9.2
+	"Liver"	"21071"	"2017"	"2017"	29899	325122128	7.2	9.2
+	"Liver"	"21071"	"2018"	"2018"	29406	323807474	7.0	9.1
+	"Liver"	"21071"	"2019"	"2019"	28643	325239182	6.7	8.8
+	"Lung and Bronchus"	"22030"	"2010"	"2010"	214637	309327143	64.1	69.4
+	"Lung and Bronchus"	"22030"	"2011"	"2011"	215055	311583481	62.8	69.0
+	"Lung and Bronchus"	"22030"	"2012"	"2012"	217981	313877662	62.0	69.4
+	"Lung and Bronchus"	"22030"	"2013"	"2013"	219583	316059947	60.9	69.5
+	"Lung and Bronchus"	"22030"	"2014"	"2014"	221587	318386329	59.9	69.6
+	"Lung and Bronchus"	"22030"	"2015"	"2015"	224815	320738994	59.2	70.1
+	"Lung and Bronchus"	"22030"	"2016"	"2016"	224995	323071755	57.8	69.6
+	"Lung and Bronchus"	"22030"	"2017"	"2017"	226950	325122128	56.7	69.8
+	"Lung and Bronchus"	"22030"	"2018"	"2018"	223429	323807474	54.9	69.0
+	"Lung and Bronchus"	"22030"	"2019"	"2019"	221097	325239182	52.9	68.0
+	"Melanoma of the Skin"	"25010"	"2010"	"2010"	66387	309327143	20.1	21.5
+	"Melanoma of the Skin"	"25010"	"2011"	"2011"	69573	311583481	20.7	22.3
+	"Melanoma of the Skin"	"25010"	"2012"	"2012"	71114	313877662	20.7	22.7
+	"Melanoma of the Skin"	"25010"	"2013"	"2013"	74779	316059947	21.4	23.7
+	"Melanoma of the Skin"	"25010"	"2014"	"2014"	79384	318386329	22.2	24.9
+	"Melanoma of the Skin"	"25010"	"2015"	"2015"	83198	320738994	22.9	25.9
+	"Melanoma of the Skin"	"25010"	"2016"	"2016"	85010	323071755	23.0	26.3
+	"Melanoma of the Skin"	"25010"	"2017"	"2017"	87732	325122128	23.2	27.0
+	"Melanoma of the Skin"	"25010"	"2018"	"2018"	85755	323807474	22.5	26.5
+	"Melanoma of the Skin"	"25010"	"2019"	"2019"	88059	325239182	22.7	27.1
+	"Myeloma"	"34000"	"2010"	"2010"	22292	309327143	6.6	7.2
+	"Myeloma"	"34000"	"2011"	"2011"	23460	311583481	6.9	7.5
+	"Myeloma"	"34000"	"2012"	"2012"	24157	313877662	6.9	7.7
+	"Myeloma"	"34000"	"2013"	"2013"	25174	316059947	7.0	8.0
+	"Myeloma"	"34000"	"2014"	"2014"	25907	318386329	7.1	8.1
+	"Myeloma"	"34000"	"2015"	"2015"	26734	320738994	7.1	8.3
+	"Myeloma"	"34000"	"2016"	"2016"	27618	323071755	7.2	8.5
+	"Myeloma"	"34000"	"2017"	"2017"	27787	325122128	7.1	8.5
+	"Myeloma"	"34000"	"2018"	"2018"	27591	323807474	6.9	8.5
+	"Myeloma"	"34000"	"2019"	"2019"	27825	325239182	6.8	8.6
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2010"	"2010"	65630	309327143	19.8	21.2
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2011"	"2011"	66823	311583481	19.8	21.4
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2012"	"2012"	67228	313877662	19.5	21.4
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2013"	"2013"	69537	316059947	19.7	22.0
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2014"	"2014"	70779	318386329	19.7	22.2
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2015"	"2015"	71980	320738994	19.6	22.4
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2016"	"2016"	72345	323071755	19.3	22.4
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2017"	"2017"	72454	325122128	19.0	22.3
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2018"	"2018"	72410	323807474	18.7	22.4
+	"Non-Hodgkin Lymphoma"	"33041-33042"	"2019"	"2019"	71575	325239182	18.1	22.0
+	"Oral Cavity and Pharynx"	"20010-20100"	"2010"	"2010"	39074	309327143	11.3	12.6
+	"Oral Cavity and Pharynx"	"20010-20100"	"2011"	"2011"	40759	311583481	11.6	13.1
+	"Oral Cavity and Pharynx"	"20010-20100"	"2012"	"2012"	41406	313877662	11.5	13.2
+	"Oral Cavity and Pharynx"	"20010-20100"	"2013"	"2013"	43213	316059947	11.8	13.7
+	"Oral Cavity and Pharynx"	"20010-20100"	"2014"	"2014"	44602	318386329	11.9	14.0
+	"Oral Cavity and Pharynx"	"20010-20100"	"2015"	"2015"	45888	320738994	12.0	14.3
+	"Oral Cavity and Pharynx"	"20010-20100"	"2016"	"2016"	46919	323071755	12.1	14.5
+	"Oral Cavity and Pharynx"	"20010-20100"	"2017"	"2017"	47400	325122128	12.0	14.6
+	"Oral Cavity and Pharynx"	"20010-20100"	"2018"	"2018"	47677	323807474	11.9	14.7
+	"Oral Cavity and Pharynx"	"20010-20100"	"2019"	"2019"	47813	325239182	11.8	14.7
+	"Ovary"	"27040"	"2010"	"2010"	21522	157249665	11.9	13.7
+	"Ovary"	"27040"	"2011"	"2011"	21625	158370501	11.8	13.7
+	"Ovary"	"27040"	"2012"	"2012"	21657	159480635	11.7	13.6
+	"Ovary"	"27040"	"2013"	"2013"	21771	160545893	11.5	13.6
+	"Ovary"	"27040"	"2014"	"2014"	21924	161690519	11.4	13.6
+	"Ovary"	"27040"	"2015"	"2015"	22114	162832151	11.3	13.6
+	"Ovary"	"27040"	"2016"	"2016"	21239	163986062	10.8	13.0
+	"Ovary"	"27040"	"2017"	"2017"	21026	165008683	10.5	12.7
+	"Ovary"	"27040"	"2018"	"2018"	20047	164367226	10.0	12.2
+	"Ovary"	"27040"	"2019"	"2019"	19571	165096351	9.6	11.9
+	"Pancreas"	"21100"	"2010"	"2010"	41494	309327143	12.3	13.4
+	"Pancreas"	"21100"	"2011"	"2011"	42973	311583481	12.5	13.8
+	"Pancreas"	"21100"	"2012"	"2012"	44659	313877662	12.7	14.2
+	"Pancreas"	"21100"	"2013"	"2013"	45730	316059947	12.7	14.5
+	"Pancreas"	"21100"	"2014"	"2014"	47754	318386329	12.9	15.0
+	"Pancreas"	"21100"	"2015"	"2015"	49524	320738994	13.1	15.4
+	"Pancreas"	"21100"	"2016"	"2016"	50746	323071755	13.1	15.7
+	"Pancreas"	"21100"	"2017"	"2017"	52533	325122128	13.3	16.2
+	"Pancreas"	"21100"	"2018"	"2018"	53636	323807474	13.4	16.6
+	"Pancreas"	"21100"	"2019"	"2019"	54076	325239182	13.2	16.6
+	"Prostate"	"28010"	"2010"	"2010"	217365	152077478	136.3	142.9
+	"Prostate"	"28010"	"2011"	"2011"	223170	153212980	135.9	145.7
+	"Prostate"	"28010"	"2012"	"2012"	190965	154397027	112.5	123.7
+	"Prostate"	"28010"	"2013"	"2013"	188371	155514054	107.9	121.1
+	"Prostate"	"28010"	"2014"	"2014"	182806	156695810	101.8	116.7
+	"Prostate"	"28010"	"2015"	"2015"	195588	157906843	106.0	123.9
+	"Prostate"	"28010"	"2016"	"2016"	203202	159085693	107.4	127.7
+	"Prostate"	"28010"	"2017"	"2017"	217112	160113445	111.7	135.6
+	"Prostate"	"28010"	"2018"	"2018"	220233	159440248	111.9	138.1
+	"Prostate"	"28010"	"2019"	"2019"	224733	160142831	111.6	140.3
+	"Stomach"	"21020"	"2010"	"2010"	22769	309327143	6.8	7.4
+	"Stomach"	"21020"	"2011"	"2011"	23027	311583481	6.8	7.4
+	"Stomach"	"21020"	"2012"	"2012"	23344	313877662	6.7	7.4
+	"Stomach"	"21020"	"2013"	"2013"	23788	316059947	6.7	7.5
+	"Stomach"	"21020"	"2014"	"2014"	24263	318386329	6.7	7.6
+	"Stomach"	"21020"	"2015"	"2015"	24357	320738994	6.6	7.6
+	"Stomach"	"21020"	"2016"	"2016"	24749	323071755	6.5	7.7
+	"Stomach"	"21020"	"2017"	"2017"	24770	325122128	6.4	7.6
+	"Stomach"	"21020"	"2018"	"2018"	24544	323807474	6.3	7.6
+	"Stomach"	"21020"	"2019"	"2019"	24382	325239182	6.1	7.5
+	"Thyroid"	"32010"	"2010"	"2010"	44032	309327143	13.8	14.2
+	"Thyroid"	"32010"	"2011"	"2011"	45849	311583481	14.2	14.7
+	"Thyroid"	"32010"	"2012"	"2012"	47557	313877662	14.6	15.2
+	"Thyroid"	"32010"	"2013"	"2013"	48877	316059947	14.8	15.5
+	"Thyroid"	"32010"	"2014"	"2014"	49064	318386329	14.7	15.4
+	"Thyroid"	"32010"	"2015"	"2015"	49703	320738994	14.8	15.5
+	"Thyroid"	"32010"	"2016"	"2016"	48893	323071755	14.4	15.1
+	"Thyroid"	"32010"	"2017"	"2017"	46194	325122128	13.5	14.2
+	"Thyroid"	"32010"	"2018"	"2018"	46043	323807474	13.4	14.2
+	"Thyroid"	"32010"	"2019"	"2019"	45311	325239182	13.1	13.9
+	"Urinary Bladder, invasive and in situ"	"29010"	"2010"	"2010"	70279	309327143	21.1	22.7
+	"Urinary Bladder, invasive and in situ"	"29010"	"2011"	"2011"	71315	311583481	21.0	22.9
+	"Urinary Bladder, invasive and in situ"	"29010"	"2012"	"2012"	73160	313877662	21.0	23.3
+	"Urinary Bladder, invasive and in situ"	"29010"	"2013"	"2013"	74204	316059947	20.8	23.5
+	"Urinary Bladder, invasive and in situ"	"29010"	"2014"	"2014"	75365	318386329	20.6	23.7
+	"Urinary Bladder, invasive and in situ"	"29010"	"2015"	"2015"	75972	320738994	20.3	23.7
+	"Urinary Bladder, invasive and in situ"	"29010"	"2016"	"2016"	76601	323071755	20.0	23.7
+	"Urinary Bladder, invasive and in situ"	"29010"	"2017"	"2017"	77291	325122128	19.6	23.8
+	"Urinary Bladder, invasive and in situ"	"29010"	"2018"	"2018"	75302	323807474	18.8	23.3
+	"Urinary Bladder, invasive and in situ"	"29010"	"2019"	"2019"	75022	325239182	18.3	23.1
+"---"
+"Dataset: United States and Puerto Rico Cancer Statistics, 1999-2019 Incidence"
+"Query Parameters:"
+"Leading Cancer Sites: All Leading Invasive Cancer Sites"
+"Year: 2010; 2011; 2012; 2013; 2014; 2015; 2016; 2017; 2018; 2019"
+"Group By: Leading Cancer Sites; Year"
+"Show Totals: Disabled"
+"Show Zero Values: True"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"Standard Population: 2000 U.S. Std. Million"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/cancer-v2019.html for more information."
+"---"
+"Query Date: Jun 4, 2023 6:53:34 AM"
+"---"
+"Suggested Citation: United States Cancer Statistics - Incidence: 1999 - 2019, WONDER Online Database. United States Department"
+"of Health and Human Services, Centers for Disease Control and Prevention and National Cancer Institute; 2021 submission; 2022"
+"release. Accessed at http://wonder.cdc.gov/cancer-v2019.html on Jun 4, 2023 6:53:34 AM"
+"---"
+Footnotes:
+"1. Data for in situ breast cancers are listed separately and are not included in the ""All Invasive Cancer Sites Combined"" or"
+"""Male and Female Breast"" cancer categories."
+"---"
+Caveats:
+"1. 'Not Applicable' is displayed for all data values when sex-specific cancers are combined with the wrong sex. More"
+"information: http://wonder.cdc.gov/wonder/help/cancer-v2019.html#Genital Cancers List."
+"2. The ""Show Totals"" checkbox is disabled when data are grouped by Cancer Sites or by Childhood Cancer, because aggregate"
+"values are displayed in the table. Also be aware that charts and maps containing both aggregate and detail data could be"
+"misleading."
+"3. Data are from selected statewide and metropolitan area cancer registries that meet data quality criteria. Incidence data"
+"shown for the United States are diagnoses and populations from included registries only."
+"4. Information on primary site, behavior, and histology was coded according to the International Classification of Diseases for"
+"Oncology, Third Edition (ICD-O-3) and categorized according to the revised SEER recodes dated March 1, 2018, which define"
+"standard groupings of primary cancer sites."
+"5. For the 2005 year, the Census Bureau estimates that 203,937 persons were displaced from Alabama, Louisiana, Mississippi and"
+"Texas due to Hurricanes Katrina and Rita. CDC WONDER does not include the displaced persons in the 2005 population counts for"
+"these states, nor are these counts included in the summary populations for the affected division, regions or national"
+"population. However, the USCS web site does include these displaced persons in the national population figures for 2005."
