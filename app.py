@@ -12,11 +12,11 @@ data_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/Gen
 data = pd.read_csv(data_path)
 
 # Create a dropdown select box for Cancer Types
-cancer_types = data['Leading Cancer Types'].unique()
+cancer_types = data['Leading Cancer Sites'].unique()
 selected_cancer_type = st.selectbox('Select a Cancer Type', cancer_types)
 
 # Filter the data based on the selected Cancer Type
-filtered_data = data[data['Leading Cancer Types'] == selected_cancer_type]
+filtered_data = data[data['Leading Cancer Sites'] == selected_cancer_type]
 
 # Create a line plot of Crude Rate across years
 plt.figure(figsize=(10, 6))
