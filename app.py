@@ -8,7 +8,7 @@ st.write("Hello, world!")
 
 
 # Load the CSV file
-data_path= 'https://github.com/marwaajouz/Stramlit_trial/blob/main/General_without_regoin.csv'
+data_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/General_without_regoin.cs'
 data = pd.read_csv(data_path)
 
 # Create a dropdown select box for Cancer Types
