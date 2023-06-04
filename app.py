@@ -8,7 +8,8 @@ st.write("Hello, world!")
 
 
 # Load the CSV file
-data = pd.read_csv('General_without_region.csv')
+data_path= 'https://github.com/marwaajouz/Stramlit_trial/blob/main/General_without_regoin.csv'
+data = pd.read_csv(data_path)
 
 # Create a dropdown select box for Cancer Types
 cancer_types = data['Leading Cancer Types'].unique()
