@@ -70,7 +70,7 @@ st.pyplot(plt)
 
 # Calculate the percentage change for each unique cancer type
 data['Percentage Change'] = data.groupby('Leading Cancer Sites')['Crude Rate'].transform(lambda x: (x.iloc[-1] - x.iloc[0]) / x.iloc[0] * 100)
-
+st.write(data)
 
 
 
