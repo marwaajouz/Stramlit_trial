@@ -26,6 +26,10 @@ data_2019 = filtered_data[filtered_data['Year'] == 2019]
 # Calculate the percentage increase or decrease
 percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
 
+# Add the Percentage Change column to the data dataframe
+data.loc[data['Leading Cancer Sites'] == selected_cancer_type, 'Percentage Change'] = percentage_change
+st.write(data)
+
 # A line plot of Crude Rate across years
 plt.figure(figsize=(10, 6))
 plt.plot(filtered_data['Year'], filtered_data['Crude Rate'])
