@@ -12,12 +12,6 @@ st.title('Cancer in the US')
 data_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/General_without_regoin.csv'
 data = pd.read_csv(data_path)
 
-# Calculate the percentage increase or decrease
-percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
-
-# Add the Percentage Change column to the data dataframe
-data.loc[data['Leading Cancer Sites'] == selected_cancer_type, 'Percentage Change'] = percentage_change
-st.write(data)
 
 # A dropdown select box for Cancer Types
 cancer_types = data['Leading Cancer Sites'].unique()
@@ -30,6 +24,12 @@ filtered_data = data[data['Leading Cancer Sites'] == selected_cancer_type]
 data_2010 = filtered_data[filtered_data['Year'] == 2010]
 data_2019 = filtered_data[filtered_data['Year'] == 2019]
 
+# Calculate the percentage increase or decrease
+percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
+
+# Add the Percentage Change column to the data dataframe
+data.loc[data['Leading Cancer Sites'] == selected_cancer_type, 'Percentage Change'] = percentage_change
+st.write(data)
 
 
 # A line plot of Crude Rate across years
@@ -66,3 +66,29 @@ plt.xlabel("Leading Cancer Sites")
 plt.ylabel("")
 
 st.pyplot(plt)
+
+
+percentage_changes = []
+for cancer_type in cancer_types:
+    # Filter the data based on the current cancer type
+    filtered_data = data[data['Leading Cancer Sites'] == cancer_type]
+    
+    # Filter the data for years 2010 and 2019
+    data_2010 = filtered_data[filtered_data['Year'] == 2010]
+    data_2019 = filtered_data[filtered_data['Year'] == 2019]
+    
+    # Calculate the percentage increase or decrease
+    percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
+
+    # Append the percentage change to the list
+    percentage_changes.append(percentage_change)
+
+# Flatten the list of percentage changes
+percentage_changes = np.concatenate(percentage_changes)
+
+# Add the Percentage Change column to the data dataframe
+data['Percentage Change'] = percentage_changes
+
+
+
+
