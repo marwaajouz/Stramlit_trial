@@ -34,9 +34,9 @@ plt.ylabel('Crude Rate')
 plt.title(f'Crude Rate of {selected_cancer_type} Across Years')
 
 # Add arrow annotation with percentage change
-arrow_text = f'{percentage_change:.2f}%'
-plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values), xytext=(2010, data_2010['Crude Rate'].values),
-             arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=12)
+#arrow_text = f'{percentage_change:.2f}%'
+#plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values), xytext=(2010, data_2010['Crude Rate'].values),
+#             arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=12)
 
 st.pyplot(plt)
 
