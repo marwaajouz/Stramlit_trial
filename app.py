@@ -18,6 +18,7 @@ selected_cancer_type = st.selectbox('Select a Cancer Type', cancer_types)
 
 # Filter the data based on the selected Cancer Type
 filtered_data = data[data['Leading Cancer Sites'] == selected_cancer_type]
+filtered_data["Death Rate (within 5 years)"] = pd.to_numeric(filtered_data["Death Rate (within 5 years)"], errors="coerce")
 
 # Create a line plot of Crude Rate across years
 plt.figure(figsize=(10, 6))
