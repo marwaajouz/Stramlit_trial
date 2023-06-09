@@ -2,6 +2,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 st.title('Cancer in the US')
 
@@ -24,3 +26,17 @@ plt.xlabel('Year')
 plt.ylabel('Crude Rate')
 plt.title(f'Crude Rate of {selected_cancer_type} Across Years')
 st.pyplot(plt)
+
+
+#Heat map for death rate
+filtered_data = data[["Leading Cancer Sites", "Death Rate (within 5 years)"]]
+average_death_rate = filtered_data.groupby("Leading Cancer Sites")["Death Rate (within 5 years)"].mean()
+pivot_table = filtered_data.pivot_table(index="Leading Cancer Sites", values="Death Rate (within 5 years)")
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(pivot_table, cmap="YlGnBu", annot=True, fmt=".2f")
+plt.title("Average Death Rate by Cancer Type")
+plt.xlabel("Leading Cancer Sites")
+plt.ylabel("")
+
+st.pyplot()
