@@ -12,19 +12,32 @@ st.title('Cancer in the US')
 data_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/General_without_regoin.csv'
 data = pd.read_csv(data_path)
 
-# Create a dropdown select box for Cancer Types
+# A dropdown select box for Cancer Types
 cancer_types = data['Leading Cancer Sites'].unique()
 selected_cancer_type = st.selectbox('Select a Cancer Type', cancer_types)
 
 # Filter the data based on the selected Cancer Type
 filtered_data = data[data['Leading Cancer Sites'] == selected_cancer_type]
 
-# Create a line plot of Crude Rate across years
+# Filter the data for years 2010 and 2019
+data_2010 = filtered_data[filtered_data['Year'] == 2010]
+data_2019 = filtered_data[filtered_data['Year'] == 2019]
+
+# Calculate the percentage increase or decrease
+percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
+
+# A line plot of Crude Rate across years
 plt.figure(figsize=(10, 6))
 plt.plot(filtered_data['Year'], filtered_data['Crude Rate'])
 plt.xlabel('Year')
 plt.ylabel('Crude Rate')
 plt.title(f'Crude Rate of {selected_cancer_type} Across Years')
+
+# Add arrow annotation with percentage change
+arrow_text = f'{percentage_change:.2f}%'
+plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values), xytext=(2010, data_2010['Crude Rate'].values),
+             arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=12)
+
 st.pyplot(plt)
 
 
