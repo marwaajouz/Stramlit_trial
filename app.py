@@ -36,8 +36,8 @@ plt.title(f'Crude Rate of {selected_cancer_type} Across Years')
 # Add arrow annotation with percentage change
 for i, value in enumerate(percentage_change):
     arrow_text = f'Percentage Increase: {value:.2f}%'
-    plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values[i]), xytext=(2015, data_2010['Crude Rate'].values[i]),
-                 arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=12)
+    plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values[i]), xytext=(2010, data_2010['Crude Rate'].values[i]),
+                 arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=10)
 #arrow_text = f'{percentage_change:.2f}%'
 #plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values), xytext=(2010, data_2010['Crude Rate'].values),
 #             arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=12)
