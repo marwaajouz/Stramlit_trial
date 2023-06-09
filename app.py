@@ -18,7 +18,6 @@ selected_cancer_type = st.selectbox('Select a Cancer Type', cancer_types)
 
 # Filter the data based on the selected Cancer Type
 filtered_data = data[data['Leading Cancer Sites'] == selected_cancer_type]
-filtered_data["Death Rate (within 5 years)"] = pd.to_numeric(filtered_data["Death Rate (within 5 years)"], errors="coerce")
 
 # Create a line plot of Crude Rate across years
 plt.figure(figsize=(10, 6))
@@ -33,9 +32,10 @@ st.pyplot(plt)
 filtered_data = data[["Leading Cancer Sites", "Death Rate (within 5 years)"]]
 filtered_data = filtered_data.sort_values(by="Death Rate (within 5 years)", ascending=False)
 
-average_death_rate = filtered_data.groupby("Leading Cancer Sites")["Death Rate (within 5 years)"].mean()
+#average_death_rate = filtered_data.groupby("Leading Cancer Sites")["Death Rate (within 5 years)"].mean()
+#filtered_data = filtered_data.sort_values(by="Death Rate (within 5 years)", ascending=False)
 pivot_table = filtered_data.pivot_table(index="Leading Cancer Sites", values="Death Rate (within 5 years)")
-
+pivot_table=pivot_table.sort_values(by="Death Rate (within 5 years)", ascending=False)
 plt.figure(figsize=(10, 8))
 sns.heatmap(pivot_table, cmap="YlGnBu", annot=True, fmt=".2f")
 plt.title("Average Death Rate by Cancer Type")
