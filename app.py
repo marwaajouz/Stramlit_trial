@@ -68,26 +68,9 @@ plt.ylabel("")
 st.pyplot(plt)
 
 
-percentage_changes = []
-for cancer_type in cancer_types:
-    # Filter the data based on the current cancer type
-    filtered_data = data[data['Leading Cancer Sites'] == cancer_type]
-    
-    # Filter the data for years 2010 and 2019
-    data_2010 = filtered_data[filtered_data['Year'] == 2010]
-    data_2019 = filtered_data[filtered_data['Year'] == 2019]
-    
-    # Calculate the percentage increase or decrease
-    percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
+# Calculate the percentage change for each unique cancer type
+data['Percentage Change'] = data.groupby('Leading Cancer Sites')['Crude Rate'].transform(lambda x: (x.iloc[-1] - x.iloc[0]) / x.iloc[0] * 100)
 
-    # Append the percentage change to the list
-    percentage_changes.append(percentage_change)
-
-# Flatten the list of percentage changes
-#percentage_changes = np.concatenate(percentage_changes)
-
-# Add the Percentage Change column to the data dataframe
-data['Percentage Change'] = percentage_changes
 
 
 
