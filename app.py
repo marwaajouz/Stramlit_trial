@@ -31,6 +31,8 @@ st.pyplot(plt)
 
 #Heat map for death rate
 filtered_data = data[["Leading Cancer Sites", "Death Rate (within 5 years)"]]
+filtered_data = filtered_data.sort_values(by="Death Rate (within 5 years)", ascending=False)
+
 average_death_rate = filtered_data.groupby("Leading Cancer Sites")["Death Rate (within 5 years)"].mean()
 pivot_table = filtered_data.pivot_table(index="Leading Cancer Sites", values="Death Rate (within 5 years)")
 
@@ -40,4 +42,4 @@ plt.title("Average Death Rate by Cancer Type")
 plt.xlabel("Leading Cancer Sites")
 plt.ylabel("")
 
-st.pyplot()
+st.pyplot(plt)
