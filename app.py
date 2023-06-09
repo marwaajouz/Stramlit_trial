@@ -12,6 +12,13 @@ st.title('Cancer in the US')
 data_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/General_without_regoin.csv'
 data = pd.read_csv(data_path)
 
+# Calculate the percentage increase or decrease
+percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
+
+# Add the Percentage Change column to the data dataframe
+data.loc[data['Leading Cancer Sites'] == selected_cancer_type, 'Percentage Change'] = percentage_change
+st.write(data)
+
 # A dropdown select box for Cancer Types
 cancer_types = data['Leading Cancer Sites'].unique()
 selected_cancer_type = st.selectbox('Select a Cancer Type', cancer_types)
@@ -23,12 +30,7 @@ filtered_data = data[data['Leading Cancer Sites'] == selected_cancer_type]
 data_2010 = filtered_data[filtered_data['Year'] == 2010]
 data_2019 = filtered_data[filtered_data['Year'] == 2019]
 
-# Calculate the percentage increase or decrease
-percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
 
-# Add the Percentage Change column to the data dataframe
-data.loc[data['Leading Cancer Sites'] == selected_cancer_type, 'Percentage Change'] = percentage_change
-st.write(data)
 
 # A line plot of Crude Rate across years
 plt.figure(figsize=(10, 6))
