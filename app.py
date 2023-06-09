@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 st.title('Cancer in the US')
-st.write("Hello, world!")
+#st.write("Hello, world!")
 
 
 # Load the CSV file
