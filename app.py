@@ -84,7 +84,7 @@ for cancer_type in cancer_types:
     percentage_changes.append(percentage_change)
 
 # Flatten the list of percentage changes
-percentage_changes = np.concatenate(percentage_changes)
+#percentage_changes = np.concatenate(percentage_changes)
 
 # Add the Percentage Change column to the data dataframe
 data['Percentage Change'] = percentage_changes
