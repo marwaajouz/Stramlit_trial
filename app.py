@@ -27,10 +27,6 @@ data_2019 = filtered_data[filtered_data['Year'] == 2019]
 # Calculate the percentage increase or decrease
 percentage_change = ((data_2019['Crude Rate'].values - data_2010['Crude Rate'].values) / data_2010['Crude Rate'].values) * 100
 
-# Add the Percentage Change column to the data dataframe
-data.loc[data['Leading Cancer Sites'] == selected_cancer_type, 'Percentage Change'] = percentage_change
-st.write(data)
-
 
 # A line plot of Crude Rate across years
 plt.figure(figsize=(10, 6))
@@ -44,9 +40,6 @@ for i, value in enumerate(percentage_change):
     arrow_text = f'Percentage Increase: {value:.2f}%'
     plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values[i]), xytext=(2010, data_2010['Crude Rate'].values[i]-0.03),
                  arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=8)
-#arrow_text = f'{percentage_change:.2f}%'
-#plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values), xytext=(2010, data_2010['Crude Rate'].values),
-#             arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=12)
 
 st.pyplot(plt)
 
@@ -70,7 +63,22 @@ st.pyplot(plt)
 
 # Calculate the percentage change for each unique cancer type
 data['Percentage Change'] = data.groupby('Leading Cancer Sites')['Crude Rate'].transform(lambda x: (x.iloc[-1] - x.iloc[0]) / x.iloc[0] * 100)
-st.write(data)
+#st.write(data)
+
+
+data['Severity'] = data['Crude Rate'] * data['Percentage Change'] * data['Death Rate']
+data_2019 = data[data['Year'] == 2019]
+sorted_data = data_2019.sort_values('Severity', ascending=False)
+
+
+plt.figure(figsize=(10, 6))
+plt.bar(sorted_data['Leading Cancer Sites'], sorted_data['Severity'])
+plt.xlabel('Cancer Type')
+plt.ylabel('Severity')
+plt.title('Severity of Cancer Types at Year 2019')
+plt.xticks(rotation=90)
+plt.tight_layout()
+st.pyplot(plt)
 
 
 
