@@ -66,7 +66,7 @@ data['Percentage Change'] = data.groupby('Leading Cancer Sites')['Crude Rate'].t
 #st.write(data)
 
 
-data['Severity'] = data['Crude Rate'] * data['Percentage Change'] * data['Death Rate']
+#data['Severity'] = data['Crude Rate'] * data['Percentage Change'] * data['Death Rate']
 #data_2019 = data[data['Year'] == 2019]
 #sorted_data = data_2019.sort_values('Severity', ascending=False)
 
