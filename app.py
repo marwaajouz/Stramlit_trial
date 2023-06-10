@@ -71,14 +71,14 @@ data_2019 = data[data['Year'] == 2019]
 sorted_data = data_2019.sort_values('Severity', ascending=False)
 
 
-plt.figure(figsize=(10, 6))
-plt.bar(sorted_data['Leading Cancer Sites'], sorted_data['Severity'])
-plt.xlabel('Cancer Type')
-plt.ylabel('Severity')
-plt.title('Severity of Cancer Types at Year 2019')
-plt.xticks(rotation=90)
-plt.tight_layout()
-st.pyplot(plt)
+#plt.figure(figsize=(10, 6))
+#plt.bar(sorted_data['Leading Cancer Sites'], sorted_data['Severity'])
+#plt.xlabel('Cancer Type')
+#plt.ylabel('Severity')
+#plt.title('Severity of Cancer Types at Year 2019')
+#plt.xticks(rotation=90)
+#plt.tight_layout()
+#st.pyplot(plt)
 
 
 
