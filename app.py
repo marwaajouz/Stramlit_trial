@@ -40,7 +40,7 @@ if pages[page] == "macro":
     plt.plot(filtered_data['Year'], filtered_data['Crude Rate'])
     plt.xlabel('Year')
     plt.ylabel('Crude Rate')
-    plt.title(f'Crude Rate of {selected_cancer_type} Across Years')
+    plt.title(f'Crude Incidence Rate of {selected_cancer_type} Cancer Across Years 2010 - 2019')
 
     # Add arrow annotation with percentage change
     for i, value in enumerate(percentage_change):
@@ -128,3 +128,13 @@ if pages[page] == "macro":
 
     # Display the plot using Streamlit
     st.pyplot(fig)
+    
+if pages[page] == "pancreas":
+    # Filter the data for Pancreas cancer and years 2010 and 2019
+    filtered_data = data[(data['Leading Cancer Sites'] == 'Pancreas') & (data['Year'].isin([2010, 2019]))]
+
+    # Select the desired columns
+    table_data = filtered_data[['Crude Rate', 'Year', 'Percentage Change']]
+
+    # Display the table
+    st.table(table_data)
