@@ -220,7 +220,7 @@ all_age_groups = pd.DataFrame({'Age Groups': unique_age_groups})
 
 # Merge all_age_groups with filtered_data to include all age groups
 merged_data = pd.merge(all_age_groups, filtered_data, on='Age Groups', how='left')
-filtered_data=merged_data
+#filtered_data=merged_data
 
 '''
 # Create a population pyramid chart using Altair
