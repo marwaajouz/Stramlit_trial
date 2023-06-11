@@ -216,13 +216,13 @@ filtered_data = filtered_data[~filtered_data['Age Groups'].isin(['< 1 year', '1-
 # Create a population pyramid chart using Altair
 chart = alt.Chart(filtered_data).mark_bar().encode(
     x='Crude Rate',
-    y=alt.Y('Age Groups', sort='-x'),
+    y=alt.Y('Age Groups', sort=alt.EncodingSortField(field='Age Groups', order='ascending'),#'-x'),
     color='Sex',
     column='Sex',
     tooltip=['Age Groups', 'Sex', 'Crude Rate']
 ).properties(
-    width=500,
-    height=400
+    width=200,
+    height=200
 )
 
 # Render the chart using Streamlit
@@ -239,13 +239,13 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
     width=200,
     height=200
 )
-'''
+
 # Set the chart layout
 chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
 
 # Show the chart
 st.altair_chart(chart)
-
+'''
     
     
     
