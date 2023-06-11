@@ -17,7 +17,7 @@ pages = {
     "Macro Overview": "macro",
     "Pancreas Cancer": "pancreas"
 }
-page = st.sidebar.selectbox("Select a page", list(pages.keys()))
+page = st.sidebar.radio("Select a page", list(pages.keys()))
 
 if pages[page] == "macro":
     # A dropdown select box for Cancer Types
