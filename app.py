@@ -279,9 +279,9 @@ plt.show()
 filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
 
 # Create the figure and axes
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(15, 8))
 
-label_text = [f'{state}\n(Crude Rate: {cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
+label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
 # Plot the treemap using squarify
 squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=0.8, ax=ax)#filtered_states['States']
 # Configure the plot
