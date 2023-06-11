@@ -260,7 +260,7 @@ sorted_states = state_crude_rates.sort_values('Crude Rate', ascending=False)
 
 # Display the states with their corresponding 'Crude Rate' values and ranks
 sorted_states['Rank'] = sorted_states['Crude Rate'].rank(ascending=False)
-print(sorted_states)
+st.write(sorted_states)
 
     
     
