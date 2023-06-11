@@ -188,7 +188,7 @@ if pages[page] == "pancreas":
     st.write(data3)
     
     #####
-    
+    '''
     with open('gz_2010_us_040_00_500k.json') as f:
         geo_data = json.load(f)
     st.write(geo_data)
@@ -204,6 +204,29 @@ if pages[page] == "pancreas":
         legend_name='Pancreas Cancer Rate (%)'
     ).add_to(m)
     folium_static(m)
+    '''
+    
+# A sidebar selectbox for state selection
+selected_state = st.sidebar.selectbox('Select a State', data2['States'].unique())
+
+# Filter the data based on the selected state
+data_2019 = data2[data2['Year'] == 2019]
+filtered_data = data_2019[data_2019['States'] == selected_state]
+
+# Create a population pyramid chart using Altair
+chart = alt.Chart(filtered_data).mark_bar().encode(
+    x='Crude Rate',
+    y=alt.Y('Age Groups', sort='-x'),
+    color='Sex',
+    column='Sex',
+    tooltip=['Age Groups', 'Sex', 'Crude Rate']
+).properties(
+    width=500,
+    height=400
+)
+
+# Render the chart using Streamlit
+st.altair_chart(chart, use_container_width=True)
 
 
     
