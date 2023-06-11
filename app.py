@@ -147,7 +147,7 @@ if pages[page] == "pancreas":
     filtered_data = data[(data['Leading Cancer Sites'] == 'Pancreas') & (data['Year'] == 2010)]
     
     incidence_2010 = filtered_data['Count'].values[0]
-    column1.metric('Pancreas Cancer Incidence Rate in 2010', incidence_2010)
+    column1.metric('Pancreas Cancer Incidence Rate in 2010', "{:,.0f}".format(incidence_2010))
     
     crude_rate_2010 = filtered_data['Crude Rate'].values[0]
     column2.metric('Pancreas Cancer Incidence Rate in 2010', crude_rate_2010)
@@ -157,7 +157,7 @@ if pages[page] == "pancreas":
     filtered_data = data[(data['Leading Cancer Sites'] == 'Pancreas') & (data['Year'] == 2019)]
     
     incidence_2019 = filtered_data['Count'].values[0]
-    column1.metric('Pancreas Cancer Incidence Rate in 2010', incidence_2019)
+    column1.metric('Pancreas Cancer Incidence Rate in 2010', "{:,.0f}".format(incidence_2019))
     
     crude_rate_2019 = filtered_data['Crude Rate'].values[0]
     column2.metric("Pancreas Cancer Incidence Rate in 2019", crude_rate_2019)
