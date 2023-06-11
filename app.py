@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import folium
 
 
 st.title('Cancer in the US')
@@ -173,3 +174,28 @@ if pages[page] == "pancreas":
     Percentage_increaase = filtered_data['Percentage Change'].values[0]
     Severity = Percentage_increaase * Death_Rate * crude_rate_2019
     column2.metric("Calculated Risk", "{:,.0f}".format(Severity))
+    
+    ########
+    data2_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/PancreasCancer.csv'
+    data2 = pd.read_csv(data_path)
+    m = folium.Map(location=[37, -102], zoom_start=4)
+    data3 = data2[(data2['Year'] == 2019)]   
+    folium.Choropleth(
+        geo_data='https://eric.clst.org/tech/usgeojson/',  # GeoJSON file containing state boundaries
+        name='choropleth',
+        data=data3,
+        columns=['State', 'Pancreas Cancer Rate'],
+        key_on='feature.properties.name',
+        fill_color='YlGnBu',
+        fill_opacity=0.7,
+        line_opacity=0.2,
+        legend_name='Pancreas Cancer Rate (%)'
+    ).add_to(m)
+    folium_static(m)
+
+
+    
+    
+    
+    
+    
