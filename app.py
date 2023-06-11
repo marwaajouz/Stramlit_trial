@@ -262,7 +262,7 @@ sorted_states = state_crude_rates.sort_values('Crude Rate', ascending=False)
 
 # Display the states with their corresponding 'Crude Rate' values and ranks
 sorted_states['Rank'] = sorted_states['Crude Rate'].rank(ascending=False)
-st.write(sorted_states)
+#st.write(sorted_states)
 
 
 ########
@@ -272,6 +272,16 @@ plt.axis('off')
 plt.title('Ranking of States by Crude Rate (TreeMap)')
 plt.show()
 
+#########
+# Create the figure and axes
+fig, ax = plt.subplots(figsize=(10, 6))
+# Plot the treemap using squarify
+squarify.plot(sizes=sorted_states['Crude Rate'], label=sorted_states['States'], alpha=0.8, ax=ax)
+# Configure the plot
+ax.axis('off')
+ax.set_title('Ranking of States by Crude Rate (TreeMap)')
+# Display the plot in Streamlit
+st.pyplot(fig)
     
     
     
