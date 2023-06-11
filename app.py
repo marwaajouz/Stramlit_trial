@@ -196,7 +196,7 @@ if pages[page] == "pancreas":
         name='choropleth',
         data=data3,
         columns=['States', 'Crude Rate'],
-        key_on='feature.properties.NAME',
+        key_on='features.properties.NAME',
         fill_color='YlGnBu',
         fill_opacity=0.7,
         line_opacity=0.2,
