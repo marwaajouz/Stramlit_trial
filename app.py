@@ -184,7 +184,7 @@ if pages[page] == "pancreas":
         geo_data='https://eric.clst.org/tech/usgeojson/',  # GeoJSON file containing state boundaries
         name='choropleth',
         data=data3,
-        columns=['State', 'Pancreas Cancer Rate'],
+        columns=['States', 'Crude Rate'],
         key_on='feature.properties.name',
         fill_color='YlGnBu',
         fill_opacity=0.7,
