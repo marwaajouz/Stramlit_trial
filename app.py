@@ -183,13 +183,10 @@ if pages[page] == "pancreas":
     data2['Crude Rate'] = data2['Crude Rate'].replace('Missing', 0)
     data2['Crude Rate'] = pd.to_numeric(data2['Crude Rate'], errors='coerce')
     data2['Crude Rate'] = data2['Crude Rate'].fillna(0)
-
+    '''
     m = folium.Map(location=[37, -102], zoom_start=4)
     data3 = data2[(data2['Year'] == 2019)]  
     st.write(data3)
-    
-    #####
-    '''
     with open('gz_2010_us_040_00_500k.json') as f:
         geo_data = json.load(f)
     st.write(geo_data)
@@ -229,6 +226,24 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
 # Render the chart using Streamlit
 st.altair_chart(chart, use_container_width=True)
 
+
+selected_state = st.sidebar.selectbox('Select a State', data2['States'].unique())
+chart = alt.Chart(filtered_data).mark_bar().encode(
+    x=alt.X('Crude Rate:Q', axis=None),
+    y=alt.Y('Age Groups:O', sort='-x', axis=None),
+    color=alt.Color('Sex:N', scale=alt.Scale(range=['#FF6492', '#6495ED']), legend=alt.Legend(title='Sex')),
+    column=alt.Column('Sex:N', header=alt.Header(title=None, labels=False)),
+    tooltip=['Age Groups', 'Sex', 'Crude Rate']
+).properties(
+    width=500,
+    height=400
+)
+
+# Set the chart layout
+chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
+
+# Show the chart
+st.altair_chart(chart)
 
     
     
