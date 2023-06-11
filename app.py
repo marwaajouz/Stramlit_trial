@@ -211,6 +211,17 @@ selected_state = st.selectbox('Select a State', data2['States'].unique())
 data_2019 = data2[data2['Year'] == 2019]
 filtered_data = data_2019[data_2019['States'] == selected_state]
 filtered_data = filtered_data[~filtered_data['Age Groups'].isin(['< 1 year', '1-4 years', '5-9 years'])]
+
+# Get unique age groups from the filtered data
+unique_age_groups = filtered_data['Age Groups'].unique()
+
+# Create a DataFrame with all age groups
+all_age_groups = pd.DataFrame({'Age Groups': unique_age_groups})
+
+# Merge all_age_groups with filtered_data to include all age groups
+merged_data = pd.merge(all_age_groups, filtered_data, on='Age Groups', how='left')
+filtered_data=merged_data
+
 '''
 # Create a population pyramid chart using Altair
 chart = alt.Chart(filtered_data).mark_bar().encode(
