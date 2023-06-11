@@ -6,6 +6,8 @@ import seaborn as sns
 import folium
 import json
 import altair as alt
+import squarify
+
 
 st.title('Cancer in the US')
 
@@ -261,6 +263,14 @@ sorted_states = state_crude_rates.sort_values('Crude Rate', ascending=False)
 # Display the states with their corresponding 'Crude Rate' values and ranks
 sorted_states['Rank'] = sorted_states['Crude Rate'].rank(ascending=False)
 st.write(sorted_states)
+
+
+########
+plt.figure(figsize=(10, 6))
+squarify.plot(sizes=sorted_states['Crude Rate'], label=sorted_states['States'], alpha=0.8)
+plt.axis('off')
+plt.title('Ranking of States by Crude Rate (TreeMap)')
+plt.show()
 
     
     
