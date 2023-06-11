@@ -168,8 +168,8 @@ if pages[page] == "pancreas":
     filtered_data = data[(data['Leading Cancer Sites'] == 'Pancreas') & (data['Year'] == 2019)]
     
     Death_Rate = filtered_data['Death Rate (within 5 years)'].values[0]
-    column1.metric('% of Deaths Between Pancrease Cancer Patients', "{:,.0f}".format(Death_Rate))
+    column1.metric('% of Deaths Between Pancrease Cancer Patients', Death_Rate)
     
     Percentage_increaase = filtered_data['Percentage Change'].values[0]
     Severity = Percentage_increaase * Death_Rate * crude_rate_2019
-    column2.metric("Calculated Risk", Severity)
+    column2.metric("Calculated Risk", "{:,.0f}".format(Severity))
