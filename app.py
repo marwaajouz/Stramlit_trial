@@ -181,7 +181,8 @@ if pages[page] == "pancreas":
     data2['Crude Rate'] = data2['Crude Rate'].replace('Missing', 0)
 
     m = folium.Map(location=[37, -102], zoom_start=4)
-    data3 = data2[(data2['Year'] == 2019)]   
+    data3 = data2[(data2['Year'] == 2019)]  
+    st.write(data3)
     folium.Choropleth(
         geo_data='https://eric.clst.org/tech/usgeojson/',  # GeoJSON file containing state boundaries
         name='choropleth',
