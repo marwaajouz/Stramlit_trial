@@ -246,7 +246,7 @@ chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
 
 # Show the chart
 st.altair_chart(chart)
-'''
+
     
     
     
