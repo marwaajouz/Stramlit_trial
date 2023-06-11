@@ -81,5 +81,14 @@ plt.tight_layout()
 st.pyplot(plt)
 
 
+plt.figure(figsize=(10, 6))
+plt.scatter(sorted_data['Leading Cancer Sites'], sorted_data['Severity'], s=sorted_data['Severity']*10)
+plt.xlabel('Cancer Type')
+plt.ylabel('Severity')
+plt.title('Severity of Cancer Types at Year 2019')
+plt.xticks(rotation=90)
+plt.tight_layout()
+st.pyplot(plt)
+
 
 
