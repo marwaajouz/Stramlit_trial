@@ -212,30 +212,6 @@ data_2019 = data2[data2['Year'] == 2019]
 filtered_data = data_2019[data_2019['States'] == selected_state]
 filtered_data = filtered_data[~filtered_data['Age Groups'].isin(['< 1 year', '1-4 years', '5-9 years'])]
 
-# Get unique age groups from the filtered data
-unique_age_groups = filtered_data['Age Groups'].unique()
-
-# Create a complete set of age groups
-all_age_groups = pd.DataFrame({'Age Groups': unique_age_groups})
-
-# Merge the complete age groups with the filtered data
-merged_data = pd.merge(all_age_groups, filtered_data, on='Age Groups', how='left')
-
-# Fill missing values with 0 for Crude Rate
-merged_data['Crude Rate'] = merged_data['Crude Rate'].fillna(0)
-
-# Separate male and female data
-male_data = merged_data[merged_data['Sex'] == 'Male']
-female_data = merged_data[merged_data['Sex'] == 'Female']
-
-# Sort the male and female data by the 'Age Groups' column
-sorted_male_data = male_data.sort_values('Age Groups', ascending=False)
-sorted_female_data = female_data.sort_values('Age Groups')
-
-# Merge the male and female data
-merged_data = pd.concat([sorted_male_data, sorted_female_data])
-filtered_data=merged_data
-
 '''
 # Create a population pyramid chart using Altair
 chart = alt.Chart(filtered_data).mark_bar().encode(
