@@ -91,15 +91,6 @@ plt.tight_layout()
 st.pyplot(plt)
 
 
-plt.figure(figsize=(10, 6))
-for cancer_type in sorted_data['Leading Cancer Sites']:
-    severity_values = filtered_data[filtered_data['Leading Cancer Sites'] == cancer_type]['Severity']
-    plt.plot(range(len(severity_values)), severity_values, label=cancer_type)
-plt.xlabel('Index')
-plt.ylabel('Severity')
-plt.title('Severity of Cancer Types at Year 2019 (Area Chart)')
-plt.legend()
-st.pyplot(plt)
 
 
 
