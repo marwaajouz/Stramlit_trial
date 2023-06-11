@@ -90,7 +90,17 @@ plt.xticks(rotation=90)
 plt.tight_layout()
 st.pyplot(plt)
 
+##########
+from wordcloud import WordCloud
 
+wordcloud_data = dict(zip(sorted_data['Leading Cancer Sites'], sorted_data['Severity']))
+
+plt.figure(figsize=(10, 6))
+wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(wordcloud_data)
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
+plt.title('Severity of Cancer Types at Year 2019 (Word Cloud)')
+st.pyplot(plt)
 
 
 
