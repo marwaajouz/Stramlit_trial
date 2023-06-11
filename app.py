@@ -218,7 +218,6 @@ unique_age_groups = filtered_data['Age Groups'].unique()
 # Create a DataFrame with all age groups
 all_age_groups = pd.DataFrame({'Age Groups': unique_age_groups})
 
-st.write(all_age_groups)
 # Merge all_age_groups with filtered_data to include all age groups
 merged_data = pd.merge(all_age_groups, filtered_data, on='Age Groups', how='left')
 #filtered_data=merged_data
