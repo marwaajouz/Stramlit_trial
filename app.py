@@ -251,6 +251,17 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
 # Show the chart
 st.altair_chart(chart)
 
+#####
+# Group the data by 'States' and calculate the mean 'Crude Rate' for each state
+state_crude_rates = data2.groupby('States')['Crude Rate'].mean().reset_index()
+
+# Sort the states based on the 'Crude Rate' values in descending order
+sorted_states = state_crude_rates.sort_values('Crude Rate', ascending=False)
+
+# Display the states with their corresponding 'Crude Rate' values and ranks
+sorted_states['Rank'] = sorted_states['Crude Rate'].rank(ascending=False)
+print(sorted_states)
+
     
     
     
