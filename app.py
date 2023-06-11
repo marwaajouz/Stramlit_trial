@@ -12,6 +12,15 @@ st.title('Cancer in the US')
 data_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/General_without_regoin.csv'
 data = pd.read_csv(data_path)
 
+#Some Calculations and additions on the dataframe:
+# Calculate the percentage change for each unique cancer type
+data['Percentage Change'] = data.groupby('Leading Cancer Sites')['Crude Rate'].transform(lambda x: (x.iloc[-1] - x.iloc[0]) / x.iloc[0] * 100)
+#st.write(data)
+
+
+data['Severity'] = data['Crude Rate'] * data['Percentage Change'] * data['Death Rate (within 5 years)']
+
+
 # Page Navigation
 pages = {
     "Macro Overview": "macro",
