@@ -225,6 +225,7 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
     height=200
 )
 
+chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
 # Render the chart using Streamlit
 st.altair_chart(chart)#, use_container_width=True)
 '''
