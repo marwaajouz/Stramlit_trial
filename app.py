@@ -226,7 +226,7 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
 )
 
 # Render the chart using Streamlit
-st.altair_chart(chart, use_container_width=True)
+st.altair_chart(chart)#, use_container_width=True)
 '''
 
 chart = alt.Chart(filtered_data).mark_bar().encode(
