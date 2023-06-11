@@ -210,7 +210,7 @@ selected_state = st.sidebar.selectbox('Select a State', data2['States'].unique()
 # Filter the data based on the selected state
 data_2019 = data2[data2['Year'] == 2019]
 filtered_data = data_2019[data_2019['States'] == selected_state]
-
+'''
 # Create a population pyramid chart using Altair
 chart = alt.Chart(filtered_data).mark_bar().encode(
     x='Crude Rate',
@@ -225,9 +225,8 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
 
 # Render the chart using Streamlit
 st.altair_chart(chart, use_container_width=True)
+'''
 
-
-selected_state = st.sidebar.selectbox('Select a State', data2['States'].unique())
 chart = alt.Chart(filtered_data).mark_bar().encode(
     x=alt.X('Crude Rate:Q', axis=None),
     y=alt.Y('Age Groups:O', sort='-x', axis=None),
