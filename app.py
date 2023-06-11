@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import folium
-
+import json
 
 st.title('Cancer in the US')
 
@@ -186,6 +186,11 @@ if pages[page] == "pancreas":
     m = folium.Map(location=[37, -102], zoom_start=4)
     data3 = data2[(data2['Year'] == 2019)]  
     st.write(data3)
+    
+    #####
+    
+    with open('gz_2010_us_040_00_500k.json') as f:
+        geo_data = json.load(f)
     folium.Choropleth(
         geo_data='https://eric.clst.org/tech/usgeojson/',  # GeoJSON file containing state boundaries
         name='choropleth',
