@@ -274,10 +274,14 @@ plt.title('Ranking of States by Crude Rate (TreeMap)')
 plt.show()
 '''
 #########
+
+# Filter out rows with zero Crude Rate
+filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
+
 # Create the figure and axes
 fig, ax = plt.subplots(figsize=(10, 6))
 # Plot the treemap using squarify
-squarify.plot(sizes=sorted_states['Crude Rate'], label=sorted_states['States'], alpha=0.8, ax=ax)
+squarify.plot(sizes=filtered_states['Crude Rate'], label=filtered_states['States'], alpha=0.8, ax=ax)
 # Configure the plot
 ax.axis('off')
 ax.set_title('Ranking of States by Crude Rate (TreeMap)')
