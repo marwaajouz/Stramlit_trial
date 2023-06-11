@@ -266,12 +266,13 @@ sorted_states['Rank'] = sorted_states['Crude Rate'].rank(ascending=False)
 
 
 ########
+'''
 plt.figure(figsize=(10, 6))
 squarify.plot(sizes=sorted_states['Crude Rate'], label=sorted_states['States'], alpha=0.8)
 plt.axis('off')
 plt.title('Ranking of States by Crude Rate (TreeMap)')
 plt.show()
-
+'''
 #########
 # Create the figure and axes
 fig, ax = plt.subplots(figsize=(10, 6))
