@@ -212,7 +212,7 @@ data_2019 = data2[data2['Year'] == 2019]
 filtered_data = data_2019[data_2019['States'] == selected_state]
 filtered_data = filtered_data[~filtered_data['Age Groups'].isin(['< 1 year', '1-4 years', '5-9 years'])]
 
-'''
+
 # Create a population pyramid chart using Altair
 chart = alt.Chart(filtered_data).mark_bar().encode(
     x='Crude Rate',
@@ -239,7 +239,7 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
     width=200,
     height=200
 )
-
+'''
 # Set the chart layout
 chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
 
