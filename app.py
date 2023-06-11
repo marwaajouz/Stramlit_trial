@@ -246,8 +246,8 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
     column=alt.Column('Sex:N', header=alt.Header(title=None, labels=False)),
     tooltip=['Age Groups', 'Sex', 'Crude Rate']
 ).properties(
-    width=300,
-    height=300
+    width=200,
+    height=200
 )
 
 # Set the chart layout
