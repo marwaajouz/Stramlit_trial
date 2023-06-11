@@ -91,4 +91,17 @@ plt.tight_layout()
 st.pyplot(plt)
 
 
+##################################
+categories = sorted_data['Leading Cancer Sites']
+severity_values = sorted_data['Severity']
 
+fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
+plt.title('Severity of Cancer Types at Year 2019 (Radar Chart)')
+
+lines, labels = plt.thetagrids(range(len(categories)), labels=categories)
+plt.plot(range(len(categories)), severity_values)
+plt.fill(range(len(categories)), severity_values, alpha=0.25)
+
+ax.set_yticklabels([])
+plt.ylim(0, max(severity_values) * 1.1)
+st.pyplot(plt)
