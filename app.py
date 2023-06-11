@@ -178,6 +178,8 @@ if pages[page] == "pancreas":
     ########
     data2_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/PancreasCancer.csv'
     data2 = pd.read_csv(data_path)
+    data2['Crude Rate'] = data2['Crude Rate'].replace('Missing', 0)
+
     m = folium.Map(location=[37, -102], zoom_start=4)
     data3 = data2[(data2['Year'] == 2019)]   
     folium.Choropleth(
