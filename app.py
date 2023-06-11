@@ -180,6 +180,8 @@ if pages[page] == "pancreas":
     data2 = pd.read_csv(data2_path)
     #st.write(data2)
     data2['Crude Rate'] = data2['Crude Rate'].replace('Missing', 0)
+    data2['Crude Rate'] = pd.to_numeric(data2['Crude Rate'], errors='coerce')
+    data2['Crude Rate'] = data2['Crude Rate'].fillna(0)
 
     m = folium.Map(location=[37, -102], zoom_start=4)
     data3 = data2[(data2['Year'] == 2019)]  
