@@ -229,7 +229,7 @@ st.altair_chart(chart, use_container_width=True)
 
 chart = alt.Chart(filtered_data).mark_bar().encode(
     x=alt.X('Crude Rate:Q', axis=None),
-    y=alt.Y('Age Groups:O'),# sort='-x'),# axis=None),
+    y=alt.Y('Age Groups:O', sort=alt.SortField(field='Age Groups', order='ascending'),#'-x'),# axis=None),
     color=alt.Color('Sex:N', scale=alt.Scale(range=['#FF6492', '#6495ED']), legend=alt.Legend(title='Sex')),
     column=alt.Column('Sex:N', header=alt.Header(title=None, labels=False)),
     tooltip=['Age Groups', 'Sex', 'Crude Rate']
