@@ -246,7 +246,7 @@ chart = alt.Chart(filtered_data).mark_bar().encode(
 )
 
 # Set the chart layout
-chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
+#chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
 
 # Show the chart
 st.altair_chart(chart)
