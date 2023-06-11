@@ -192,7 +192,7 @@ if pages[page] == "pancreas":
     with open('gz_2010_us_040_00_500k.json') as f:
         geo_data = json.load(f)
     folium.Choropleth(
-        geo_data='https://eric.clst.org/tech/usgeojson/',  # GeoJSON file containing state boundaries
+        geo_data=geo_data,  # GeoJSON file containing state boundaries
         name='choropleth',
         data=data3,
         columns=['States', 'Crude Rate'],
