@@ -139,11 +139,21 @@ if pages[page] == "macro":
     st.pyplot(fig)
     
 if pages[page] == "pancreas":
-    # Filter the data for Pancreas cancer and years 2010 and 2019
-    filtered_data = data[(data['Leading Cancer Sites'] == 'Pancreas') & (data['Year'].isin([2010, 2019]))]
-
-    # Select the desired columns
-    table_data = filtered_data[['Crude Rate', 'Year', 'Percentage Change']]
-
-    # Display the table
-    st.table(table_data)
+    st.subheader('Overview of Pancreas Cancer Situation in the US')
+    column1, column2 = st.columns(2)
+    #number1 = int(metric.values[0])
+    
+    # Filter the data for Pancreas cancer and year 2010
+    filtered_data = data[(data['Leading Cancer Sites'] == 'Pancreas') & (data['Year'] == 2010)]
+    # Extract the crude rate value
+    crude_rate_2010 = filtered_data['Crude Rate'].values[0]
+    column1.metric('Pancreas Cancer Incidence Rate in 2010', crude_rate_2010)
+    
+    # Filter the data for Pancreas cancer and year 2019
+    filtered_data = data[(data['Leading Cancer Sites'] == 'Pancreas') & (data['Year'] == 2019)]
+    # Extract the crude rate value
+    crude_rate_2019 = filtered_data['Crude Rate'].values[0]
+    column2.metric("Pancreas Cancer Incidence Rate in 2019", crude_rate_2019)
+    
+    #column3.metric("Percentage Increase", numerize.numerize(int(county_confirmed_time.tail(1).values[0][0])))
+    #column4.metric("Total deaths", numerize.numerize(int(county_deaths_time.tail(1).values[0][0])))
