@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import folium
 import json
+import altair as alt
 
 st.title('Cancer in the US')
 
