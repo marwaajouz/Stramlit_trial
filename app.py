@@ -103,4 +103,21 @@ plt.title('Severity of Cancer Types at Year 2019 (Word Cloud)')
 st.pyplot(plt)
 
 
+###################################
+severity_values = sorted_data['Severity']
+cancer_types = sorted_data['Leading Cancer Sites']
 
+# Create a scatter plot
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.scatter(cancer_types, severity_values)
+
+# Set labels and title
+ax.set_xlabel('Leading Cancer Sites')
+ax.set_ylabel('Severity')
+ax.set_title('Risk Chart')
+
+# Rotate x-axis labels for better visibility
+plt.xticks(rotation=90)
+
+# Display the plot using Streamlit
+st.pyplot(fig)
