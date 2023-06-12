@@ -9,7 +9,6 @@ import altair as alt
 import squarify
 
 
-st.title('Analysis of Cancer Cases in the Unied States of America')
 
 
 # Load the CSV file
@@ -33,11 +32,11 @@ pages = {
 page = st.sidebar.radio("Select a page", list(pages.keys()))
 
 if pages[page] == "macro":
+    st.title('Analysis of Cancer Cases in the Unied States of America - General Overview')
     # A dropdown select box for Cancer Types
 
-    st.markdown('General Overview of Cancer Cases across the US')
     '''
-    This page shows an overview of the most common cancer cases across the US. It studies trends of cancer incidence rates across years 2010 till 2019. It then 
+    This page shows an overview of the most common cancer cases across the US. It studies trends of cancer incidence rates (cases / 100,000) across years 2010 till 2019. It then 
     presents the death rates (as a percentage) for each cancer type (within 5 years of diagnosis). According to the above presented results, Severity of each cancer type
     is calculated as: Incidence Rate (at year 2019) x percentage increase (from 2010 to 2019) x Death rate. The cancer with the highest severity value is then studied in 
     details in the second page.
@@ -115,7 +114,8 @@ if pages[page] == "macro":
     data['Severity'] = data['Crude Rate'] * data['Percentage Change'] * data['Death Rate (within 5 years)']
     data_2019 = data[data['Year'] == 2019]
     sorted_data = data_2019.sort_values('Severity', ascending=False)
-
+    highest_severity_cancer = sorted_data.iloc[0]['Leading Cancer Sites']
+    highest_severity_value = sorted_data.iloc[0]['Severity']
 
     plt.figure(figsize=(10, 6))
     plt.bar(sorted_data['Leading Cancer Sites'], sorted_data['Severity'])
@@ -125,48 +125,12 @@ if pages[page] == "macro":
     plt.xticks(rotation=90)
     plt.tight_layout()
     st.pyplot(plt)
+    
+    st.write(f"Highest Severity: {highest_severity_cancer}")
+    st.write(f"Severity Value: {highest_severity_value}")
 
 
-    plt.figure(figsize=(10, 6))
-    plt.scatter(sorted_data['Leading Cancer Sites'], sorted_data['Severity'], s=sorted_data['Severity']*10)
-    plt.xlabel('Cancer Type')
-    plt.ylabel('Severity')
-    plt.title('Severity of Cancer Types at Year 2019')
-    plt.xticks(rotation=90)
-    plt.tight_layout()
-    st.pyplot(plt)
 
-    ##########
-    from wordcloud import WordCloud
-
-    wordcloud_data = dict(zip(sorted_data['Leading Cancer Sites'], sorted_data['Severity']))
-
-    plt.figure(figsize=(10, 6))
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(wordcloud_data)
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')
-    plt.title('Severity of Cancer Types at Year 2019 (Word Cloud)')
-    st.pyplot(plt)
-
-
-    ###################################
-    severity_values = sorted_data['Severity']
-    cancer_types = sorted_data['Leading Cancer Sites']
-
-    # Create a scatter plot
-    fig, ax = plt.subplots(figsize=(8, 6))
-    ax.scatter(cancer_types, severity_values)
-
-    # Set labels and title
-    ax.set_xlabel('Leading Cancer Sites')
-    ax.set_ylabel('Severity')
-    ax.set_title('Risk Chart')
-
-    # Rotate x-axis labels for better visibility
-    plt.xticks(rotation=90)
-
-    # Display the plot using Streamlit
-    st.pyplot(fig)
     
 if pages[page] == "pancreas":
     st.subheader('Overview of Pancreas Cancer Situation in the US')
