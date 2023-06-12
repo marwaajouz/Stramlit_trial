@@ -98,7 +98,7 @@ if pages[page] == "macro":
     column2.metric('Highest Percentage Increase', "{:,.0f}".format(highest_percentage_increase_value))
 
         # Layout
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns(([2, 1]))
 
     with col1:
         # Display the line plot
