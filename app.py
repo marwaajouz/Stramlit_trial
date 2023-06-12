@@ -296,7 +296,7 @@ data4 = pd.read_csv(data4_path)
 
 #selected_year = st.sidebar.selectbox('Select a Year', data4['Year'].unique())
 years = data4['Year'].unique().astype(int)
-selected_year = st.slider('Select a Year', min_value=min(years), max_value=max(years))
+selected_year = st.slider('Select a Year', min_value=int(min(years)), max_value=int(max(years)))
 
 filtered_data = data4[(data4['Year'] == selected_year) & (~data4['Race'].isin(['Other Races and Unknown combined']))]
 filtered_data['Crude Rate'] = pd.to_numeric(filtered_data['Crude Rate'], errors='coerce')
