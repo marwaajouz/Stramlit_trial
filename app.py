@@ -74,7 +74,7 @@ if pages[page] == "macro":
 
     st.pyplot(plt)
     # Find cancer type with highest Crude Rate in 2019
-    highest_crude_rate = data_2019[data_2019['Crude Rate'] == data_2019['Crude Rate'].max()]['Cancer Type'].values[0]
+    highest_crude_rate = data_2019[data_2019['Crude Rate'] == data_2019['Crude Rate'].max()]['Leading Cancer Sites'].values[0]
     highest_crude_rate_value = data_2019['Crude Rate'].max()
 
     # Find cancer type with highest percentage increase
