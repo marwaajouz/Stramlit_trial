@@ -156,15 +156,15 @@ if pages[page] == "macro":
     with col2:
         
         # Display the results
-        col3,col4 = st.columns(2)
+        #col3,col4 = st.columns(2)
 
-        col3.metric('Highest Severity', highest_severity_cancer)
+        col2.metric('Highest Severity', highest_severity_cancer)
         
 
         # Display the results
-        col5,col6 = st.columns(2)
+        #col5,col6 = st.columns(2)
 
-        col5.metric('Severity Value', "{:,.0f}".format(highest_severity_value))
+        col2.metric('Severity Value', "{:,.0f}".format(highest_severity_value))
         
             
     column1, column2 = st.columns(2)
