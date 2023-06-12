@@ -206,109 +206,109 @@ if pages[page] == "pancreas":
     folium_static(m)
     '''
     
-# A sidebar selectbox for state selection
-selected_state = st.selectbox('Select a State', data2['States'].unique())
+    # A sidebar selectbox for state selection
+    selected_state = st.selectbox('Select a State', data2['States'].unique())
 
-# Filter the data based on the selected state
-data_2019 = data2[data2['Year'] == 2019]
-filtered_data = data_2019[data_2019['States'] == selected_state]
-filtered_data = filtered_data[~filtered_data['Age Groups'].isin(['< 1 year', '1-4 years', '5-9 years'])]
+    # Filter the data based on the selected state
+    data_2019 = data2[data2['Year'] == 2019]
+    filtered_data = data_2019[data_2019['States'] == selected_state]
+    filtered_data = filtered_data[~filtered_data['Age Groups'].isin(['< 1 year', '1-4 years', '5-9 years'])]
 
-'''
-# Create a population pyramid chart using Altair
-chart = alt.Chart(filtered_data).mark_bar().encode(
-    x='Crude Rate',
-    y=alt.Y('Age Groups', sort=alt.EncodingSortField(field='Age Groups', order='ascending'),#'-x'),
-    color='Sex',
-    column='Sex',
-    tooltip=['Age Groups', 'Sex', 'Crude Rate']
-).properties(
-    width=200,
-    height=200
-)
+    '''
+    # Create a population pyramid chart using Altair
+    chart = alt.Chart(filtered_data).mark_bar().encode(
+        x='Crude Rate',
+        y=alt.Y('Age Groups', sort=alt.EncodingSortField(field='Age Groups', order='ascending'),#'-x'),
+        color='Sex',
+        column='Sex',
+        tooltip=['Age Groups', 'Sex', 'Crude Rate']
+    ).properties(
+        width=200,
+        height=200
+    )
 
-chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
-# Render the chart using Streamlit
-st.altair_chart(chart)#, use_container_width=True)
-'''
+    chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
+    # Render the chart using Streamlit
+    st.altair_chart(chart)#, use_container_width=True)
+    '''
 
-chart = alt.Chart(filtered_data).mark_bar().encode(
-    #x=alt.X('Crude Rate:Q', axis=None),
-    x='Crude Rate',
-    #y=alt.Y('Age Groups:O', sort=alt.EncodingSortField(field='Age Groups', order='ascending')),# axis=alt.Axis(title='Age Groups')),
-    y=alt.Y('Age Groups', sort=alt.EncodingSortField(field='Age Groups', order='ascending')),
-    #color='Sex',
-    #column='Sex',
-    color=alt.Color('Sex:N', scale=alt.Scale(range=['#FF6492', '#6495ED']), legend=alt.Legend(title='Sex')),
-    column=alt.Column('Sex:N', header=alt.Header(title=None, labels=False)),
-    tooltip=['Age Groups', 'Sex', 'Crude Rate']
-).properties(
-    width=200,
-    height=200
-)
+    chart = alt.Chart(filtered_data).mark_bar().encode(
+        #x=alt.X('Crude Rate:Q', axis=None),
+        x='Crude Rate',
+        #y=alt.Y('Age Groups:O', sort=alt.EncodingSortField(field='Age Groups', order='ascending')),# axis=alt.Axis(title='Age Groups')),
+        y=alt.Y('Age Groups', sort=alt.EncodingSortField(field='Age Groups', order='ascending')),
+        #color='Sex',
+        #column='Sex',
+        color=alt.Color('Sex:N', scale=alt.Scale(range=['#FF6492', '#6495ED']), legend=alt.Legend(title='Sex')),
+        column=alt.Column('Sex:N', header=alt.Header(title=None, labels=False)),
+        tooltip=['Age Groups', 'Sex', 'Crude Rate']
+    ).properties(
+        width=200,
+        height=200
+    )
 
-# Set the chart layout
-#chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
+    # Set the chart layout
+    #chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
 
-# Show the chart
-st.altair_chart(chart)
+    # Show the chart
+    st.altair_chart(chart)
 
-#####
-# Group the data by 'States' and calculate the mean 'Crude Rate' for each state
-state_crude_rates = data2.groupby('States')['Crude Rate'].mean().reset_index()
+    #####
+    # Group the data by 'States' and calculate the mean 'Crude Rate' for each state
+    state_crude_rates = data2.groupby('States')['Crude Rate'].mean().reset_index()
 
-# Sort the states based on the 'Crude Rate' values in descending order
-sorted_states = state_crude_rates.sort_values('Crude Rate', ascending=False)
+    # Sort the states based on the 'Crude Rate' values in descending order
+    sorted_states = state_crude_rates.sort_values('Crude Rate', ascending=False)
 
-# Display the states with their corresponding 'Crude Rate' values and ranks
-sorted_states['Rank'] = sorted_states['Crude Rate'].rank(ascending=False)
-#st.write(sorted_states)
+    # Display the states with their corresponding 'Crude Rate' values and ranks
+    sorted_states['Rank'] = sorted_states['Crude Rate'].rank(ascending=False)
+    #st.write(sorted_states)
 
 
-########
-'''
-plt.figure(figsize=(10, 6))
-squarify.plot(sizes=sorted_states['Crude Rate'], label=sorted_states['States'], alpha=0.8)
-plt.axis('off')
-plt.title('Ranking of States by Crude Rate (TreeMap)')
-plt.show()
-'''
-#########
+    ########
+    '''
+    plt.figure(figsize=(10, 6))
+    squarify.plot(sizes=sorted_states['Crude Rate'], label=sorted_states['States'], alpha=0.8)
+    plt.axis('off')
+    plt.title('Ranking of States by Crude Rate (TreeMap)')
+    plt.show()
+    '''
+    #########
 
-# Filter out rows with zero Crude Rate
-filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
+    # Filter out rows with zero Crude Rate
+    filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
 
-# Create the figure and axes
-fig, ax = plt.subplots(figsize=(15, 8))
+    # Create the figure and axes
+    fig, ax = plt.subplots(figsize=(15, 8))
 
-label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
-# Plot the treemap using squarify
-squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=0.8, ax=ax)#filtered_states['States']
-# Configure the plot
-ax.axis('off')
-ax.set_title('Ranking of States by Crude Rate (TreeMap)')
-# Display the plot in Streamlit
-st.pyplot(fig)
+    label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
+    # Plot the treemap using squarify
+    squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=0.8, ax=ax)#filtered_states['States']
+    # Configure the plot
+    ax.axis('off')
+    ax.set_title('Ranking of States by Crude Rate (TreeMap)')
+    # Display the plot in Streamlit
+    st.pyplot(fig)
 
-# Load the CSV file
-data4_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/Pancreas_Cancer_Race.csv'
-data4 = pd.read_csv(data4_path)
+    # Load the CSV file
+    data4_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/Pancreas_Cancer_Race.csv'
+    data4 = pd.read_csv(data4_path)
 
-#selected_year = st.sidebar.selectbox('Select a Year', data4['Year'].unique())
-years = data4['Year'].unique().astype(int)
-selected_year = st.slider('Select a Year', min_value=int(min(years)), max_value=int(max(years)))
+    #selected_year = st.sidebar.selectbox('Select a Year', data4['Year'].unique())
+    years = data4['Year'].unique().astype(int)
+    selected_year = st.slider('Select a Year', min_value=int(min(years)), max_value=int(max(years)))
 
-filtered_data = data4[(data4['Year'] == selected_year) & (~data4['Race'].isin(['Other Races and Unknown combined']))]
-filtered_data['Crude Rate'] = pd.to_numeric(filtered_data['Crude Rate'], errors='coerce')
+    filtered_data = data4[(data4['Year'] == selected_year) & (~data4['Race'].isin(['Other Races and Unknown combined']))]
+    filtered_data['Crude Rate'] = pd.to_numeric(filtered_data['Crude Rate'], errors='coerce')
 
-plt.figure(figsize=(10, 6))
-sns.barplot(data=filtered_data, x='Race', y='Crude Rate', hue='Sex',ci=None)
-plt.xlabel('Race')
-plt.ylabel('Crude Rate')
-plt.title(f'Crude Rate by Race for Year {selected_year}')
-plt.xticks(rotation=45)
-plt.legend()
-st.pyplot(plt)
+    plt.figure(figsize=(10, 6))
+    sns.barplot(data=filtered_data, x='Race', y='Crude Rate', hue='Sex',ci=None)
+    plt.xlabel('Race')
+    plt.ylabel('Crude Rate')
+    plt.title(f'Crude Rate by Race for Year {selected_year}')
+    plt.xticks(rotation=45)
+    plt.legend()
+    st.pyplot(plt)
 
 
 
