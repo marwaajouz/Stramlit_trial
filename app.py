@@ -296,6 +296,7 @@ data4 = pd.read_csv(data4_path)
 
 selected_year = st.sidebar.selectbox('Select a Year', data4['Year'].unique())
 filtered_data = data4[(data4['Year'] == selected_year) & (~data4['Race'].isin(['Other Races and Unknown combined']))]
+filtered_data['Crude Rate'] = pd.to_numeric(filtered_data['Crude Rate'], errors='coerce')
 
 plt.figure(figsize=(10, 6))
 sns.barplot(data=filtered_data, x='Race', y='Crude Rate', hue='Sex')
