@@ -75,7 +75,7 @@ if pages[page] == "macro":
         
     data_2019['Crude Rate'] = pd.to_numeric(data_2019['Crude Rate'], errors='coerce')
 
-    st.pyplot(plt)
+    
     # Find cancer type with highest Crude Rate in 2019
     highest_crude_rate = data_2019_[data_2019_['Crude Rate'] == data_2019_['Crude Rate'].max()]['Leading Cancer Sites'].values[0]
     highest_crude_rate_value = data_2019_['Crude Rate'].max()
@@ -84,18 +84,7 @@ if pages[page] == "macro":
     highest_percentage_increase_index = percentage_change_.argmax()
     highest_percentage_increase = data['Leading Cancer Sites'].values[highest_percentage_increase_index]
     highest_percentage_increase_value = percentage_change_[highest_percentage_increase_index]
-
-    # Display the results
-    column1, column2 = st.columns(2)
-   
-    column1.metric('Cancer Type with Highest Rate in 2019', highest_crude_rate)
-    column2.metric('Highest Rate', "{:,.0f}".format(highest_crude_rate_value))
     
-    # Display the results
-    column1, column2 = st.columns(2)
-   
-    column1.metric('Cancer of Highest % Increase', highest_percentage_increase)
-    column2.metric('Highest % Increase', "{:,.0f}".format(highest_percentage_increase_value))
 
         # Layout
     col1, col2 = st.columns(([1.5, 1]))
@@ -110,7 +99,7 @@ if pages[page] == "macro":
         col3, col4 = st.columns(2)
 
         col3.metric('Highest Rate Value', "{:,.0f}".format(highest_crude_rate_value))
-        col3.metric('Cancer Type', highest_crude_rate)
+        col4.metric('Cancer Type', highest_crude_rate)
 
         # Display the results
         col5, col6 = st.columns(2)
