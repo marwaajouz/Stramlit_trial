@@ -71,7 +71,18 @@ if pages[page] == "macro":
                      arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=8)
 
     st.pyplot(plt)
+    # Find cancer type with highest Crude Rate in 2019
+    highest_crude_rate = data_2019[data_2019['Crude Rate'] == data_2019['Crude Rate'].max()]['Cancer Type'].values[0]
+    highest_crude_rate_value = data_2019['Crude Rate'].max()
 
+    # Find cancer type with highest percentage increase
+    highest_percentage_increase_index = percentage_change.argmax()
+    highest_percentage_increase = filtered_data['Cancer Type'].values[highest_percentage_increase_index]
+    highest_percentage_increase_value = percentage_change[highest_percentage_increase_index]
+
+    # Display the results
+    st.subheader(f'Cancer Type with Highest Crude Rate in 2019: {highest_crude_rate} ({highest_crude_rate_value:.2f})')
+    st.subheader(f'Cancer Type with Highest Percentage Increase: {highest_percentage_increase} ({highest_percentage_increase_value:.2f}%)')
     
     #Heat map for death rate
     filtered_data = data[["Leading Cancer Sites", "Death Rate (within 5 years)"]]
