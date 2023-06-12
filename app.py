@@ -61,10 +61,10 @@ if pages[page] == "macro":
 
 
     # A line plot of Crude Rate across years
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(6, 3))
     plt.plot(filtered_data['Year'], filtered_data['Crude Rate'])
     plt.xlabel('Year')
-    plt.ylabel('Crude Rate')
+    plt.ylabel('Incident Rate')
     plt.title(f'Crude Incidence Rate of {selected_cancer_type} Cancer Across Years 2010 - 2019')
 
     # Add arrow annotation with percentage change
