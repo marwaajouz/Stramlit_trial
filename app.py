@@ -88,11 +88,16 @@ if pages[page] == "macro":
     # Display the results
     column1, column2 = st.columns(2)
    
-    column1.metric('Cancer Type with Highest Crude Rate in 2019', highest_crude_rate)
-    column2.metric('Cancer Type with Highest Percentage Increase', "{:,.0f}".format(highest_crude_rate_value))
+    column1.metric('Cancer Type with Highest Incidence Rate in 2019', highest_crude_rate)
+    column2.metric('Highest Incidence Rate', "{:,.0f}".format(highest_crude_rate_value))
     
-    st.subheader(f'Cancer Type with Highest Crude Rate in 2019: {highest_crude_rate} ({highest_crude_rate_value:.2f})')
-    st.subheader(f'Cancer Type with Highest Percentage Increase: {highest_percentage_increase} ({highest_percentage_increase_value:.2f}%)')
+    # Display the results
+    column1, column2 = st.columns(2)
+   
+    column1.metric('Cancer Type with Highest Percentage Increase', highest_percentage_increase)
+    column2.metric('Highest Percentage Increase', "{:,.0f}".format(highest_percentage_increase_value))
+    
+
     
     #Heat map for death rate
     filtered_data = data[["Leading Cancer Sites", "Death Rate (within 5 years)"]]
