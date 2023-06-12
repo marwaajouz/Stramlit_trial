@@ -79,7 +79,7 @@ if pages[page] == "macro":
 
     # Find cancer type with highest percentage increase
     highest_percentage_increase_index = percentage_change.argmax()
-    highest_percentage_increase = filtered_data['Cancer Type'].values[highest_percentage_increase_index]
+    highest_percentage_increase = filtered_data['Leading Cancer Sites'].values[highest_percentage_increase_index]
     highest_percentage_increase_value = percentage_change[highest_percentage_increase_index]
 
     # Display the results
