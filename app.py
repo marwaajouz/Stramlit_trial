@@ -129,9 +129,8 @@ if pages[page] == "macro":
     column1, column2 = st.columns(2)
    
     column1.metric('Highest Severity', highest_severity_cancer)
-    column2.metric('Severity Value', highest_severity_value)
-    st.write(f"Highest Severity: {highest_severity_cancer}")
-    st.write(f"Severity Value: {highest_severity_value}")
+    column2.metric('Severity Value', "{:,.0f}".format(highest_severity_value))
+    
 
 
 
