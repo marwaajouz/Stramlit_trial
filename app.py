@@ -46,6 +46,10 @@ if pages[page] == "macro":
     cancer_types = data['Leading Cancer Sites'].unique()
     selected_cancer_type = st.selectbox('Select a Cancer Type', cancer_types)
 
+    data_2010_ = data[data['Year'] == 2010]
+    data_2019_ = data[data['Year'] == 2019]
+    percentage_change_ = ((data_2019_['Crude Rate'].values - data_2010_['Crude Rate'].values) / data_2010_['Crude Rate'].values) * 100
+    
     # Filter the data based on the selected Cancer Type
     filtered_data = data[data['Leading Cancer Sites'] == selected_cancer_type]
 
@@ -74,13 +78,13 @@ if pages[page] == "macro":
 
     st.pyplot(plt)
     # Find cancer type with highest Crude Rate in 2019
-    highest_crude_rate = data_2019[data_2019['Crude Rate'] == data_2019['Crude Rate'].max()]['Leading Cancer Sites'].values[0]
-    highest_crude_rate_value = data_2019['Crude Rate'].max()
+    highest_crude_rate = data_2019_[data_2019_['Crude Rate'] == data_2019_['Crude Rate'].max()]['Leading Cancer Sites'].values[0]
+    highest_crude_rate_value = data_2019_['Crude Rate'].max()
 
     # Find cancer type with highest percentage increase
-    highest_percentage_increase_index = percentage_change.argmax()
-    highest_percentage_increase = filtered_data['Leading Cancer Sites'].values[highest_percentage_increase_index]
-    highest_percentage_increase_value = percentage_change[highest_percentage_increase_index]
+    highest_percentage_increase_index = percentage_change_.argmax()
+    highest_percentage_increase = data['Leading Cancer Sites'].values[highest_percentage_increase_index]
+    highest_percentage_increase_value = percentage_change_[highest_percentage_increase_index]
 
     # Display the results
     st.subheader(f'Cancer Type with Highest Crude Rate in 2019: {highest_crude_rate} ({highest_crude_rate_value:.2f})')
