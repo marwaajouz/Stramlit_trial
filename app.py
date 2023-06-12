@@ -96,8 +96,29 @@ if pages[page] == "macro":
    
     column1.metric('Cancer Type with Highest Percentage Increase', highest_percentage_increase)
     column2.metric('Highest Percentage Increase', "{:,.0f}".format(highest_percentage_increase_value))
-    
 
+        # Layout
+    col1, col2 = st.columns(2)
+
+    with col1:
+        # Display the line plot
+        st.pyplot(plt)
+
+    with col2:
+        
+        # Display the results
+        col3, col4 = st.columns(2)
+
+        col3.metric('Cancer Type with Highest Incidence Rate in 2019', highest_crude_rate)
+        col4.metric('Highest Incidence Rate', "{:,.0f}".format(highest_crude_rate_value))
+
+        # Display the results
+        col5, col6 = st.columns(2)
+
+        col5.metric('Cancer Type with Highest Percentage Increase', highest_percentage_increase)
+        col6.metric('Highest Percentage Increase', "{:,.0f}".format(highest_percentage_increase_value))
+    
+    
     
     #Heat map for death rate
     filtered_data = data[["Leading Cancer Sites", "Death Rate (within 5 years)"]]
