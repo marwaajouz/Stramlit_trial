@@ -9,7 +9,7 @@ import altair as alt
 import squarify
 
 
-st.title('Cancer in the US')
+st.title('Analysis of Cancer Cases in the Unied States of America')
 
 
 # Load the CSV file
@@ -34,6 +34,15 @@ page = st.sidebar.radio("Select a page", list(pages.keys()))
 
 if pages[page] == "macro":
     # A dropdown select box for Cancer Types
+
+    st.markdown('General Overview of Cancer Cases across the US')
+    '''
+    This page shows an overview of the most common cancer cases across the US. It studies trends of cancer incidence rates across years 2010 till 2019. It then 
+    presents the death rates (as a percentage) for each cancer type (within 5 years of diagnosis). According to the above presented results, Severity of each cancer type
+    is calculated as: Incidence Rate (at year 2019) x percentage increase (from 2010 to 2019) x Death rate. The cancer with the highest severity value is then studied in 
+    details in the second page.
+    '''
+    
     cancer_types = data['Leading Cancer Sites'].unique()
     selected_cancer_type = st.selectbox('Select a Cancer Type', cancer_types)
 
@@ -63,7 +72,7 @@ if pages[page] == "macro":
 
     st.pyplot(plt)
 
-
+    
     #Heat map for death rate
     filtered_data = data[["Leading Cancer Sites", "Death Rate (within 5 years)"]]
     filtered_data = filtered_data.sort_values(by="Death Rate (within 5 years)", ascending=False)
