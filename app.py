@@ -147,8 +147,29 @@ if pages[page] == "macro":
     plt.tight_layout()
     st.pyplot(plt)
     
+    col1, col2 = st.columns(([1.5, 1]))
+
+    with col1:
+        # Display the line plot
+        st.pyplot(plt)
+
+    with col2:
+        
+        # Display the results
+        col3 = st.columns(1)
+
+        col3.metric('Highest Severity', highest_severity_cancer)
+        
+
+        # Display the results
+        col4 = st.columns(1)
+
+        col4.metric('Severity Value', "{:,.0f}".format(highest_severity_value))
+        
+            
     column1, column2 = st.columns(2)
    
+
     column1.metric('Highest Severity', highest_severity_cancer)
     column2.metric('Severity Value', "{:,.0f}".format(highest_severity_value))
     
