@@ -289,8 +289,25 @@ ax.axis('off')
 ax.set_title('Ranking of States by Crude Rate (TreeMap)')
 # Display the plot in Streamlit
 st.pyplot(fig)
-    
-    
+
+# Load the CSV file
+data4_path= 'https://raw.githubusercontent.com/marwaajouz/Stramlit_trial/main/Pancreas_Cancer_Race.csv'
+data4 = pd.read_csv(data4_path)
+
+selected_year = st.sidebar.selectbox('Select a Year', data4['Year'].unique())
+filtered_data = data4[(data4['Year'] == selected_year) & (~data4['Race'].isin(['Other Races and Unknown combined']))]
+
+plt.figure(figsize=(10, 6))
+sns.barplot(data=filtered_data, x='Race', y='Crude Rate', hue='Sex')
+plt.xlabel('Race')
+plt.ylabel('Crude Rate')
+plt.title(f'Crude Rate by Race for Year {selected_year}')
+plt.xticks(rotation=45)
+plt.legend()
+st.pyplot(plt)
+
+
+
     
     
     
