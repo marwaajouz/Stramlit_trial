@@ -32,7 +32,7 @@ pages = {
 page = st.sidebar.radio("Select a page", list(pages.keys()))
 
 if pages[page] == "macro":
-    st.title('Analysis of Cancer Cases in the Unied States of America - General Overview')
+    st.subheader('Analysis of Cancer Cases in the Unied States of America - General Overview')
     # A dropdown select box for Cancer Types
 
     '''
@@ -86,6 +86,11 @@ if pages[page] == "macro":
     highest_percentage_increase_value = percentage_change_[highest_percentage_increase_index]
 
     # Display the results
+    column1, column2 = st.columns(2)
+   
+    column1.metric('Cancer Type with Highest Crude Rate in 2019', highest_crude_rate)
+    column2.metric('Cancer Type with Highest Percentage Increase', "{:,.0f}".format(highest_crude_rate_value:.2f))
+    
     st.subheader(f'Cancer Type with Highest Crude Rate in 2019: {highest_crude_rate} ({highest_crude_rate_value:.2f})')
     st.subheader(f'Cancer Type with Highest Percentage Increase: {highest_percentage_increase} ({highest_percentage_increase_value:.2f}%)')
     
