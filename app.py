@@ -147,7 +147,7 @@ if pages[page] == "macro":
     plt.tight_layout()
     st.pyplot(plt)
     
-    col1, col2 = st.columns(([2.2, 1]))
+    col1, col2 = st.columns(([2.7, 1]))
 
     with col1:
         # Display the line plot
