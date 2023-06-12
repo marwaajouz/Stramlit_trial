@@ -89,7 +89,7 @@ if pages[page] == "macro":
     column1, column2 = st.columns(2)
    
     column1.metric('Cancer Type with Highest Crude Rate in 2019', highest_crude_rate)
-    column2.metric('Cancer Type with Highest Percentage Increase', "{:,.0f}".format(highest_crude_rate_value:.2f))
+    column2.metric('Cancer Type with Highest Percentage Increase', "{:,.0f}".format(highest_crude_rate_value))
     
     st.subheader(f'Cancer Type with Highest Crude Rate in 2019: {highest_crude_rate} ({highest_crude_rate_value:.2f})')
     st.subheader(f'Cancer Type with Highest Percentage Increase: {highest_percentage_increase} ({highest_percentage_increase_value:.2f}%)')
