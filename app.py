@@ -126,6 +126,10 @@ if pages[page] == "macro":
     plt.tight_layout()
     st.pyplot(plt)
     
+    column1, column2 = st.columns(2)
+   
+    column1.metric('Highest Severity', highest_severity_cancer)
+    column2.metric('Severity Value', highest_severity_value)
     st.write(f"Highest Severity: {highest_severity_cancer}")
     st.write(f"Severity Value: {highest_severity_value}")
 
@@ -135,7 +139,7 @@ if pages[page] == "macro":
 if pages[page] == "pancreas":
     st.subheader('Overview of Pancreas Cancer Situation in the US')
     column1, column2 = st.columns(2)
-    #number1 = int(metric.values[0])
+    
     
     # Filter the data for Pancreas cancer and year 2010
     filtered_data = data[(data['Leading Cancer Sites'] == 'Pancreas') & (data['Year'] == 2010)]
