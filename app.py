@@ -98,7 +98,7 @@ if pages[page] == "macro":
     column2.metric('Highest % Increase', "{:,.0f}".format(highest_percentage_increase_value))
 
         # Layout
-    col1, col2 = st.columns(([1.6, 1]))
+    col1, col2 = st.columns(([1.5, 1]))
 
     with col1:
         # Display the line plot
@@ -109,14 +109,14 @@ if pages[page] == "macro":
         # Display the results
         col3, col4 = st.columns(2)
 
-        col3.metric('Cancer Type with Highest Incidence Rate in 2019', highest_crude_rate)
+        col3.metric('Cancer with Highest Rate', highest_crude_rate)
         col4.metric('Highest Incidence Rate', "{:,.0f}".format(highest_crude_rate_value))
 
         # Display the results
         col5, col6 = st.columns(2)
 
-        col5.metric('Cancer Type with Highest Percentage Increase', highest_percentage_increase)
-        col6.metric('Highest Percentage Increase', "{:,.0f}".format(highest_percentage_increase_value))
+        col5.metric('Cancer with Highest % Increase', highest_percentage_increase)
+        col6.metric('Highest % Increase', "{:,.0f}".format(highest_percentage_increase_value))
     
     
     
