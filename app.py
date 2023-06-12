@@ -69,6 +69,8 @@ if pages[page] == "macro":
         arrow_text = f'Percentage Increase: {value:.2f}%'
         plt.annotate(arrow_text, xy=(2019, data_2019['Crude Rate'].values[i]), xytext=(2010, data_2010['Crude Rate'].values[i]-0.03),
                      arrowprops=dict(facecolor='red', arrowstyle='->'), fontsize=8)
+        
+    data_2019['Crude Rate'] = pd.to_numeric(data_2019['Crude Rate'], errors='coerce')
 
     st.pyplot(plt)
     # Find cancer type with highest Crude Rate in 2019
