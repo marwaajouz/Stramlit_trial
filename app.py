@@ -119,7 +119,7 @@ if pages[page] == "macro":
     #filtered_data = filtered_data.sort_values(by="Death Rate (within 5 years)", ascending=False)
     pivot_table = filtered_data.pivot_table(index="Leading Cancer Sites", values="Death Rate (within 5 years)")
     pivot_table=pivot_table.sort_values(by="Death Rate (within 5 years)", ascending=False)
-    plt.figure(figsize=(6, 4))
+    plt.figure(figsize=(8, 4))
     sns.heatmap(pivot_table, cmap="YlGnBu", annot=True, fmt=".2f")
     plt.title("Average Death Rate by Cancer Type")
     plt.xlabel("Leading Cancer Sites")
