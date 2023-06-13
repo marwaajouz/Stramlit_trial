@@ -204,26 +204,7 @@ if pages[page] == "pancreas":
     data2['Crude Rate'] = data2['Crude Rate'].replace('Missing', 0)
     data2['Crude Rate'] = pd.to_numeric(data2['Crude Rate'], errors='coerce')
     data2['Crude Rate'] = data2['Crude Rate'].fillna(0)
-    '''
-    m = folium.Map(location=[37, -102], zoom_start=4)
-    data3 = data2[(data2['Year'] == 2019)]  
-    st.write(data3)
-    with open('gz_2010_us_040_00_500k.json') as f:
-        geo_data = json.load(f)
-    st.write(geo_data)
-    folium.Choropleth(
-        geo_data=geo_data,  # GeoJSON file containing state boundaries
-        name='choropleth',
-        data=data3,
-        columns=['States', 'Crude Rate'],
-        key_on='features.properties.NAME',
-        fill_color='YlGnBu',
-        fill_opacity=0.7,
-        line_opacity=0.2,
-        legend_name='Pancreas Cancer Rate (%)'
-    ).add_to(m)
-    folium_static(m)
-    '''
+
     
     # A sidebar selectbox for state selection
     selected_state = st.selectbox('Select a State', data2['States'].unique())
@@ -233,23 +214,7 @@ if pages[page] == "pancreas":
     filtered_data = data_2019[data_2019['States'] == selected_state]
     filtered_data = filtered_data[~filtered_data['Age Groups'].isin(['< 1 year', '1-4 years', '5-9 years'])]
 
-    '''
-    # Create a population pyramid chart using Altair
-    chart = alt.Chart(filtered_data).mark_bar().encode(
-        x='Crude Rate',
-        y=alt.Y('Age Groups', sort=alt.EncodingSortField(field='Age Groups', order='ascending'),#'-x'),
-        color='Sex',
-        column='Sex',
-        tooltip=['Age Groups', 'Sex', 'Crude Rate']
-    ).properties(
-        width=200,
-        height=200
-    )
 
-    chart = chart.resolve_scale(y='independent').configure_view(strokeWidth=0)
-    # Render the chart using Streamlit
-    st.altair_chart(chart)#, use_container_width=True)
-    '''
 
     chart = alt.Chart(filtered_data).mark_bar().encode(
         #x=alt.X('Crude Rate:Q', axis=None),
@@ -273,6 +238,9 @@ if pages[page] == "pancreas":
     st.altair_chart(chart)
 
     #####
+    
+    
+    
     # Group the data by 'States' and calculate the mean 'Crude Rate' for each state
     state_crude_rates = data2.groupby('States')['Crude Rate'].mean().reset_index()
 
@@ -285,15 +253,7 @@ if pages[page] == "pancreas":
 
 
     ########
-    '''
-    plt.figure(figsize=(10, 6))
-    squarify.plot(sizes=sorted_states['Crude Rate'], label=sorted_states['States'], alpha=0.8)
-    plt.axis('off')
-    plt.title('Ranking of States by Crude Rate (TreeMap)')
-    plt.show()
-    '''
-    #########
-
+    
     # Filter out rows with zero Crude Rate
     filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
 
