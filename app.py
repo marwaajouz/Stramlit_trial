@@ -259,7 +259,7 @@ if pages[page] == "pancreas":
     filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
 
     # Define colormap
-    cmap = cm.get_cmap('viridis')  # Choose a desired colormap (e.g., 'viridis', 'cool', 'cubehelix', etc.)
+    cmap = cm.get_cmap('cool')  # Choose a desired colormap (e.g., 'viridis', 'cool', 'cubehelix', etc.)
 
     # Generate color values based on Crude Rate
     color_values = filtered_states['Crude Rate']
