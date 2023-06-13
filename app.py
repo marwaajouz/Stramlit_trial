@@ -164,7 +164,7 @@ if pages[page] == "macro":
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(wordcloud_data)
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
-    plt.title('Severity of Cancer Types - Large words correspond to high severity ')
+    st.subheader('Severity of Cancer Types - Large words correspond to high severity ')
     st.pyplot(plt)
 
     
