@@ -258,7 +258,7 @@ if pages[page] == "pancreas":
     filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
 
     # Create the figure and axes
-    fig, ax = plt.subplots(figsize=(15, 8))
+    fig, ax = plt.subplots(figsize=(20, 10))
 
     label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
     # Plot the treemap using squarify
@@ -280,7 +280,7 @@ if pages[page] == "pancreas":
     filtered_data = data4[(data4['Year'] == selected_year) & (~data4['Race'].isin(['Other Races and Unknown combined']))]
     filtered_data['Crude Rate'] = pd.to_numeric(filtered_data['Crude Rate'], errors='coerce')
 
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(8, 5))
     sns.barplot(data=filtered_data, x='Race', y='Crude Rate', hue='Sex',ci=None)
     plt.xlabel('Race')
     plt.ylabel('Crude Rate')
