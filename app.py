@@ -228,7 +228,7 @@ if pages[page] == "pancreas":
         column=alt.Column('Sex:N', header=alt.Header(title=None, labels=False)),
         tooltip=['Age Groups', 'Sex', 'Crude Rate']
     ).properties(
-        width=200,
+        width=250,
         height=250
     )
 
@@ -266,7 +266,7 @@ if pages[page] == "pancreas":
     color_range = color_values.max() - color_values.min()
     normalized_values = (color_values - color_values.min()) / color_range
     
-    fig, ax = plt.subplots(figsize=(25, 15))
+    fig, ax = plt.subplots(figsize=(30, 20))
 
     label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
     # Plot the treemap using squarify
@@ -275,7 +275,7 @@ if pages[page] == "pancreas":
     ax.axis('off')
     ax.set_title('Ranking of States by Crude Rate (TreeMap)')
     for label in ax.texts:
-        label.set_fontsize(14)
+        label.set_fontsize(20)
     
     st.pyplot(fig)
 
@@ -290,7 +290,7 @@ if pages[page] == "pancreas":
     filtered_data = data4[(data4['Year'] == selected_year) & (~data4['Race'].isin(['Other Races and Unknown combined']))]
     filtered_data['Crude Rate'] = pd.to_numeric(filtered_data['Crude Rate'], errors='coerce')
 
-    plt.figure(figsize=(8, 5))
+    plt.figure(figsize=(8, 4))
     sns.barplot(data=filtered_data, x='Race', y='Crude Rate', hue='Sex',ci=None)
     plt.xlabel('Race')
     plt.ylabel('Crude Rate')
