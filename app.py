@@ -7,6 +7,7 @@ import folium
 import json
 import altair as alt
 import squarify
+import matplotlib.cm as cm
 
 
 
@@ -257,12 +258,19 @@ if pages[page] == "pancreas":
     # Filter out rows with zero Crude Rate
     filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
 
+    # Define colormap
+    cmap = cm.get_cmap('viridis')  # Choose a desired colormap (e.g., 'viridis', 'cool', 'cubehelix', etc.)
+
+    # Generate color values based on Crude Rate
+    color_values = filtered_states['Crude Rate']
+    color_range = color_values.max() - color_values.min()
+    normalized_values = (color_values - color_values.min()) / color_range
     
     fig, ax = plt.subplots(figsize=(25, 15))
 
     label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
     # Plot the treemap using squarify
-    squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=0.7, ax=ax)#filtered_states['States']
+    squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=0.7, color=cmap(normalized_values), ax=ax)#filtered_states['States']
     # Configure the plot
     ax.axis('off')
     ax.set_title('Ranking of States by Crude Rate (TreeMap)')
