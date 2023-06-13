@@ -262,7 +262,7 @@ if pages[page] == "pancreas":
 
     label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
     # Plot the treemap using squarify
-    squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=1.4, ax=ax)#filtered_states['States']
+    squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=0.7, ax=ax)#filtered_states['States']
     # Configure the plot
     ax.axis('off')
     ax.set_title('Ranking of States by Crude Rate (TreeMap)')
