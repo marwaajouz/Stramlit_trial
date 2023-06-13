@@ -106,7 +106,7 @@ if pages[page] == "macro":
         col5, col6 = st.columns(2)
 
         col5.metric('Highest % Increase', "{:,.0f}".format(highest_percentage_increase_value))
-        col6.metric('Cancer Type', 'Melanoma of the Skin')
+        col6.metric('Cancer Type', 'Skin')
         
     
     
