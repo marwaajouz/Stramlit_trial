@@ -266,6 +266,8 @@ if pages[page] == "pancreas":
     # Configure the plot
     ax.axis('off')
     ax.set_title('Ranking of States by Crude Rate (TreeMap)')
+    for label in ax.texts:
+        label.set_fontsize(14)
     
     st.pyplot(fig)
 
