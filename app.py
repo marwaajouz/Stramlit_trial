@@ -257,16 +257,16 @@ if pages[page] == "pancreas":
     # Filter out rows with zero Crude Rate
     filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
 
-    # Create the figure and axes
+    
     fig, ax = plt.subplots(figsize=(25, 15))
 
     label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
     # Plot the treemap using squarify
-    squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=0.8, ax=ax)#filtered_states['States']
+    squarify.plot(sizes=filtered_states['Crude Rate'], label=label_text, alpha=1.4, ax=ax)#filtered_states['States']
     # Configure the plot
     ax.axis('off')
     ax.set_title('Ranking of States by Crude Rate (TreeMap)')
-    # Display the plot in Streamlit
+    
     st.pyplot(fig)
 
     # Load the CSV file
