@@ -228,7 +228,7 @@ if pages[page] == "pancreas":
         tooltip=['Age Groups', 'Sex', 'Crude Rate']
     ).properties(
         width=200,
-        height=200
+        height=250
     )
 
     # Set the chart layout
@@ -258,7 +258,7 @@ if pages[page] == "pancreas":
     filtered_states = sorted_states[sorted_states['Crude Rate'] > 0]
 
     # Create the figure and axes
-    fig, ax = plt.subplots(figsize=(20, 10))
+    fig, ax = plt.subplots(figsize=(25, 15))
 
     label_text = [f'{state}\n({cr:.2f})' for state, cr in zip(filtered_states['States'], filtered_states['Crude Rate'])]
     # Plot the treemap using squarify
