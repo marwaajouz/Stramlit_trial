@@ -36,12 +36,7 @@ if pages[page] == "macro":
     st.subheader('Analysis of Cancer Cases in the Unied States of America - General Overview')
     # A dropdown select box for Cancer Types
 
-    '''
-    This page shows an overview of the most common cancer cases across the US. It studies trends of cancer incidence rates (cases / 100,000) across years 2010 till 2019. It then 
-    presents the death rates (as a percentage) for each cancer type (within 5 years of diagnosis). According to the above presented results, Severity of each cancer type
-    is calculated as: Incidence Rate (at year 2019) x percentage increase (from 2010 to 2019) x Death rate. The cancer with the highest severity value is then studied in 
-    details in the second page.
-    '''
+
     
     cancer_types = data['Leading Cancer Sites'].unique()
     selected_cancer_type = st.selectbox('Select a Cancer Type', cancer_types)
@@ -138,7 +133,8 @@ if pages[page] == "macro":
     sorted_data = data_2019.sort_values('Severity', ascending=False)
     highest_severity_cancer = sorted_data.iloc[0]['Leading Cancer Sites']
     highest_severity_value = sorted_data.iloc[0]['Severity']
-
+    
+    st.subheader('Severity = Incidence Rate (2019) x % increase x Death Rate (within 5 years)')
     plt.figure(figsize=(10, 6))
     plt.bar(sorted_data['Leading Cancer Sites'], sorted_data['Severity'])
     plt.xlabel('Cancer Type')
