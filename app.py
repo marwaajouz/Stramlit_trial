@@ -100,7 +100,7 @@ if pages[page] == "macro":
         col3, col4 = st.columns(2)
 
         col3.metric('Highest Rate Value', "{:,.0f}".format(highest_crude_rate_value))
-        col4.metric('Cancer Type', highest_crude_rate)
+        col4.metric('Cancer Type', 'Melanoma of the Skin')
 
         # Display the results
         col5, col6 = st.columns(2)
